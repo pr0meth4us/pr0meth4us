@@ -1,4 +1,4 @@
-.bayon-regular {
+body {
     font-family: "Bayon", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -16,5 +16,5 @@ body::before {
     background-size: cover;
     opacity: 0.05;
     z-index: -1;
-    pointer-events: none; /* Make sure it doesn't block any interactions */
+    pointer-events: none;
 }
