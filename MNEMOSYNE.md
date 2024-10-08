@@ -2,7 +2,7 @@
 
 [Discover Mnemosyne Here](https://mnemosyne-hazel.vercel.app/)
 
-Mnemosyne is a web application that rescues disappearing conversations from TikTok by transforming them into HTML pages and PDFs. It keeps everything within your browser, without sending data to external servers or saving it to a permanent database.
+Mnemosyne is a web app that recovers deleted TikTok chats by converting them into HTML pages and PDFs. Your data is processed locally in your browser, keeping it private and secure.
 
 ## Features
 
