@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // Compose the message
         const message = `New visitor submission:\nName: ${name}\nReason: ${reason}\nTelegram: ${telegram}`;
 
-        require('dotenv').config();
-        const botToken = process.env.BOT_TOKEN;
-        const chatId = process.env.CHAT_ID;
+        // Use injected config from config.js
+        const botToken = window.env.BOT_TOKEN;
+        const chatId = window.env.CHAT_ID;
 
         fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
             method: 'POST',
