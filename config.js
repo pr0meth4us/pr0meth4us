@@ -1,0 +1,4 @@
+window.env = {
+  BOT_TOKEN: "7800025628:AAF99ms_RJhsVO5pPqXN_NbsYEZ9ncxa0LY",
+  CHAT_ID: "1836585300"
+};
