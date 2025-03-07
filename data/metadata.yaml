@@ -1,0 +1,58 @@
+en:
+  nav:
+    home: "Home"
+    about: "About"
+    projects: "Projects"
+    papers: "Papers"
+  footer: "© 2025 SOEUNG Phearaeron"
+  home:
+    welcome: "Welcome"
+    intro: "I’m SOEUNG Phearaeron, blending IT and International Relations to shape Cambodia’s digital future."
+    buttons:
+      about: "About Me"
+      projects: "Coding Projects"
+      papers: "Papers"
+  about:
+    title: "About Me"
+  projects:
+    title: "Coding Projects"
+  papers:
+    title: "Papers I've Written"
+  modal:
+    name: "Name"
+    reason: "Reason for visiting"
+    recruiter: "Recruiter"
+    stalking: "Just Stalking"
+    no: "No"
+    telegram: "Telegram handle"
+    skip: "Skip"
+    submit: "Submit"
+km:
+  nav:
+    home: "ទំព័រដើម"
+    about: "អំពីខ្ញុំ"
+    projects: "គម្រោងកូដ"
+    papers: "ឯកសារ"
+  footer: "© ២០២៥ Phearameron Soeung"
+  home:
+    welcome: "សូមស្វាគមន៍"
+    intro: "ខ្ញុំគឺ Phearameron Soeung ដែលរួមបញ្ចូលគ្នារវាង IT និងទំនាក់ទំនងអន្តរជាតិ ដើម្បីបង្កើតអនាគតឌីជីថលរបស់កម្ពុជា។"
+    buttons:
+      about: "អំពីខ្ញុំ"
+      projects: "គម្រោងកូដ"
+      papers: "ឯកសារ"
+  about:
+    title: "អំពីខ្ញុំ"
+  projects:
+    title: "គម្រោងកូដ"
+  papers:
+    title: "ឯកសារដែលខ្ញុំបានសរសេរ"
+  modal:
+    name: "ឈ្មោះ"
+    reason: "មូលហេតុនៃការមកទស្សនា"
+    recruiter: "អ្នកជ្រើសរើស"
+    stalking: "គ្រាន់តែមើល"
+    no: "ទេ"
+    telegram: "ឈ្មោះ Telegram"
+    skip: "រំលង"
+    submit: "ដាក់ស្នើ"
