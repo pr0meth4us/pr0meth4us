@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Modal handling
     const welcomeModal = document.getElementById('welcome-modal');
     const modalForm = document.getElementById('modal-form');
     const modalSkip = document.getElementById('modal-skip');
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("Modal element found:", !!welcomeModal);
     console.log("localStorage modalShown value:", localStorage.getItem('modalShown'));
 
-    // Show modal if not previously shown
     if (welcomeModal && localStorage.getItem('modalShown') !== 'true') {
         console.log("Showing modal after delay");
         setTimeout(() => {
@@ -27,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Modal will not be shown - already seen or element not found");
     }
 
-    // Handle "No" buttons
     const noButtons = document.querySelectorAll('.no-button');
     noButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -82,7 +79,6 @@ Telegram: ${telegramHandle}`;
                     .then(response => response.json())
                     .then(data => {
                         console.log("Telegram response:", data);
-                        alert("Form submitted! Your message was sent to Telegram.");
                     })
                     .catch(err => {
                         console.error("Error sending Telegram message:", err);
@@ -90,7 +86,6 @@ Telegram: ${telegramHandle}`;
                     });
             } else {
                 console.error("Bot token or chat ID is not defined in window.env.");
-                console.log("window.env:", window.env);
                 alert("Telegram configuration is missing.");
             }
 
@@ -98,7 +93,6 @@ Telegram: ${telegramHandle}`;
         });
     }
 
-    // Skip button functionality
     if (modalSkip) {
         modalSkip.addEventListener('click', function() {
             localStorage.setItem('modalShown', 'true');
