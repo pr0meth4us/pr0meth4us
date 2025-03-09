@@ -2,8 +2,8 @@ title: SOEUNG Phearaeron
 email: phearaneron.soeung@gmail.com
 description: >-
   Personal website of Neron
-baseurl: ""
-url: "https://pr0meth4us.github.io/pr0meth4us"
+baseurl: "/pr0meth4us"
+url: "https://pr0meth4us.github.io"
 
 markdown: kramdown
 plugins:
