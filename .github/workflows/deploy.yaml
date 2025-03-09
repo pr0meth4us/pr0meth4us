@@ -9,21 +9,31 @@ permissions:
   contents: write
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Generate config.js
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Install dependencies
         run: |
-          echo "window.env = {" > config.js
-          echo "  BOT_TOKEN: \"${{ secrets.BOT_TOKEN }}\"," >> config.js
-          echo "  CHAT_ID: \"${{ secrets.CHAT_ID }}\"" >> config.js
-          echo "};" >> config.js
+          gem install bundler
+          bundle install
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./_site
+          publish_branch: main
