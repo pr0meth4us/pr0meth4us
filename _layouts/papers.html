@@ -1,0 +1,36 @@
+---
+layout: default
+title: Academic Papers
+---
+
+<!-- Main Content -->
+<main class="p-8 max-w-2xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6">Academic Papers</h1>
+
+    <div class="space-y-8">
+        {% for paper in site.data.papers %}
+        <div class="p-6 bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div class="flex flex-col">
+                {% if paper.thumbnail %}
+                <div class="flex mb-4">
+                    <div class="w-1/4 flex-shrink-0 mr-4">
+                        <img src="{{ paper.thumbnail }}" alt="Thumbnail for {{ paper.title }}" class="w-full h-auto rounded">
+                    </div>
+                    <div class="w-3/4">
+                        <h2 class="text-2xl font-bold mb-2">{{ paper.title }}</h2>
+                    </div>
+                </div>
+                {% else %}
+                <h2 class="text-2xl font-bold mb-2">{{ paper.title }}</h2>
+                {% endif %}
+
+                <p class="mb-4 text-gray-700 w-full">{{ paper.abstract }}</p>
+
+                <a href="{{ paper.link }}" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Read More
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
