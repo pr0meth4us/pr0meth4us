@@ -1,10 +1,9 @@
 title: SOEUNG Phearaeron
-email: your-email@example.com
+email: phearaneron.soeung@gmail.com
 description: >-
-  Personal website of SOEUNG Phearaeron, blending IT and International Relations 
-  to shape Cambodia's digital future.
+  Personal website of Neron
 baseurl: ""
-url: ""
+url: "https://pr0meth4us.github.io/"
 
 markdown: kramdown
 plugins:
