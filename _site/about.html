@@ -1,80 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SOEUNG Phearaeron - About Me</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Tailwind CSS via CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- js-yaml CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-    <!-- Translation Script -->
-    <script defer src="js/translation.js"></script>
-</head>
-<body class="bg-gray-100 text-gray-900">
-<!-- Header -->
-<header class="flex justify-between items-center p-4 border-b border-gray-300">
-    <div>
-        <a href="index.html" class="text-xl font-bold">SOEUNG Phearaeron</a>
-    </div>
-    <nav class="space-x-4">
-        <a href="index.html" class="hover:underline" data-translate="home">Home</a>
-        <a href="about.html" class="hover:underline font-bold" data-translate="about">About Me</a>
-        <a href="projects.html" class="hover:underline" data-translate="projects">Coding Projects</a>
-        <a href="papers.html" class="hover:underline" data-translate="papers">Papers</a>
-    </nav>
-    <!-- Language Switcher -->
-    <div>
-        <button id="lang-en" class="px-2 py-1 border rounded font-bold">EN</button>
-        <button id="lang-kh" class="px-2 py-1 border rounded">KH</button>
-    </div>
-</header>
-
 <!-- Main Content -->
 <main class="p-8 max-w-2xl mx-auto">
     <!-- Profile Photo -->
-    <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741373385/4A433223-994E-41B6-B4F7-50EB26DF0C28_cvbtmp.jpg" alt="Phearameron Soeung" class="mx-auto w-40 h-40 rounded-full shadow-lg">
+    <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741373385/4A433223-994E-41B6-B4F7-50EB26DF0C28_cvbtmp.jpg" alt="SOEUNG Phearaeron" class="mx-auto w-40 h-40 rounded-full shadow-lg object-cover mb-6">
+
     <!-- About Title -->
-    <h1 class="mt-4 text-3xl font-bold" data-translate="about">About Me</h1>
+    <h1 class="text-3xl font-bold mb-6" data-translate="about">About Me</h1>
+
     <!-- Bio -->
-    <p id="bio" class="mt-4"></p>
+    <div class="prose prose-lg max-w-none mb-8">
+        <p><strong>Neron</strong></p>
+
+<p>Suffered through 3 years of academic indecision—I’m almost graduating with dual degrees in IR and IT. After plenty of hard thinking, real-world experience, and existential crises, I’ve found my sweet spot in <strong>Digital Governance</strong>.</p>
+
+    </div>
+
     <!-- Skills -->
-    <div id="skills" class="mt-4 space-x-2"></div>
+    <h2 class="text-2xl font-bold mb-4">Skills</h2>
+    <div class="flex flex-wrap gap-2 mb-8">
+        
+    </div>
+
     <!-- Social Links -->
-    <div id="socials" class="mt-4 space-x-4"></div>
+    <h2 class="text-2xl font-bold mb-4">Connect</h2>
+    <div class="flex flex-wrap gap-4">
+        
+    </div>
 </main>
-
-<!-- Footer -->
-<footer class="p-4 border-t border-gray-300 text-center">
-    © SOEUNG Phearaeron
-</footer>
-
-<!-- JSON loading script -->
-<script>
-    fetch('data/about.json')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('bio').textContent = data.bio;
-            // Render skills as tags
-            const skillsDiv = document.getElementById('skills');
-            data.skills.forEach(skill => {
-                const span = document.createElement('span');
-                span.textContent = skill;
-                span.className = "inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm";
-                skillsDiv.appendChild(span);
-            });
-            // Render social links
-            const socialsDiv = document.getElementById('socials');
-            for (const [platform, url] of Object.entries(data.socials)) {
-                const a = document.createElement('a');
-                a.href = url;
-                a.textContent = platform;
-                a.className = "text-blue-500 hover:underline";
-                a.target = "_blank";
-                socialsDiv.appendChild(a);
-            }
-        })
-        .catch(error => console.error('Error loading about data:', error));
-</script>
-</body>
-</html>
