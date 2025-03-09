@@ -23,5 +23,11 @@
 
 <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/translation.js' | relative_url }}"></script>
+<script>
+    window.env = {
+        BOT_TOKEN: '{{ site.bot_token }}',
+        CHAT_ID: '{{ site.chat_id }}'
+    };
+</script>
 </body>
 </html>

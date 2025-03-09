@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Modal will not be shown - already seen or element not found");
     }
 
-    // Handle form submission
     if (modalForm) {
         modalForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const telegramHandle = document.getElementById('telegram-handle').value;
             const reasonElement = document.querySelector('input[name="reason"]:checked');
 
-            // Check if a reason was selected
             if (!reasonElement) {
                 alert("Please select a reason for your visit.");
                 return;
@@ -40,11 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const reason = reasonElement.value;
 
-            // Save to localStorage that user has seen the modal
             localStorage.setItem('modalShown', 'true');
             localStorage.setItem('visitorName', name);
 
-            // Compose the Telegram message
             const message = `New visitor submission:\nName: ${name}\nReason: ${reason}\nTelegram: ${telegramHandle}`;
 
             const botToken = window.env && window.env.BOT_TOKEN;

@@ -26,8 +26,13 @@ jobs:
           gem install bundler
           bundle install
 
+      - name: Create production config
+        run: |
+          echo "bot_token: ${{ secrets.BOT_TOKEN }}" > _config_prod.yml
+          echo "chat_id: ${{ secrets.CHAT_ID }}" >> _config_prod.yml
+
       - name: Build Jekyll site
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --config _config.yml,_config_prod.yml
         env:
           JEKYLL_ENV: production
 
