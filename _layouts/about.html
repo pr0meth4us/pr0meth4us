@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<!-- Main Content -->
+<main class="p-8 max-w-2xl mx-auto">
+    <!-- Profile Photo -->
+    <img src="{{ page.profile_image }}" alt="{{ site.title }}" class="mx-auto w-40 h-40 rounded-full shadow-lg object-cover mb-6">
+
+    <!-- About Title -->
+    <h1 class="text-3xl font-bold mb-6" data-translate="about">{{ page.title }}</h1>
+
+    <!-- Bio -->
+    <div class="prose prose-lg max-w-none mb-8">
+        {{ content | markdownify }}
+    </div>
+
+    <!-- Skills -->
+    <h2 class="text-2xl font-bold mb-4">Skills</h2>
+    <div class="flex flex-wrap gap-2 mb-8">
+        {% for skill in site.data.about.skills %}
+        <span class="inline-block bg-gray-200 text-gray-800 px-3 py-1 rounded text-sm">{{ skill }}</span>
+        {% endfor %}
+    </div>
+
+    <!-- Social Links -->
+    <h2 class="text-2xl font-bold mb-4">Connect</h2>
+    <div class="flex flex-wrap gap-4">
+        {% for social in site.data.about.socials %}
+        <a href="{{ social.url }}" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+            {{ social.platform }}
+        </a>
+        {% endfor %}
+    </div>
+</main>

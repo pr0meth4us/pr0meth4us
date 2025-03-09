@@ -1,6 +1,0 @@
-light:
-  background: "bg-gray-100"
-  text: "text-gray-900"
-dark:
-  background: "bg-gray-900"
-  text: "text-gray-100"
