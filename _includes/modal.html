@@ -1,10 +1,9 @@
-<!-- Modal (hidden by default) -->
 <div id="welcome-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
     <div class="bg-white p-8 rounded-lg shadow-xl w-96 max-w-full mx-4">
         <h2 class="text-2xl font-bold mb-6 text-gray-800" data-translate="modalTitle">Welcome Visitor</h2>
         <form id="modal-form">
             <div class="mb-6">
-                <label class="block text-sm font-semibold mb-2 text-gray-700" data-translate="modalNameLabel">Name</label>
+                <label for="visitor-name" class="block text-sm font-semibold mb-2 text-gray-700" data-translate="modalNameLabel">Name</label>
                 <input type="text" id="visitor-name" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500" required>
             </div>
             <div class="mb-6">
@@ -25,7 +24,7 @@
                 </div>
             </div>
             <div class="mb-6">
-                <label class="block text-sm font-semibold mb-2 text-gray-700" data-translate="modalTelegramLabel">Telegram Handle</label>
+                <label for="telegram-handle" class="block text-sm font-semibold mb-2 text-gray-700" data-translate="modalTelegramLabel">Telegram Handle</label>
                 <input type="text" id="telegram-handle" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500">
             </div>
             <div class="flex justify-end space-x-4">
