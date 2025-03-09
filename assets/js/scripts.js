@@ -8,25 +8,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Welcome modal functionality
     const welcomeModal = document.getElementById('welcome-modal');
     const modalForm = document.getElementById('modal-form');
     const modalSkip = document.getElementById('modal-skip');
 
-    // Show modal on first visit (using localStorage)
-    if (welcomeModal && !localStorage.getItem('modalShown')) {
+    console.log("Modal element found:", !!welcomeModal);
+    console.log("localStorage modalShown value:", localStorage.getItem('modalShown'));
+
+    if (welcomeModal && localStorage.getItem('modalShown') !== 'true') {
+        console.log("Showing modal after delay");
         setTimeout(() => {
             welcomeModal.classList.remove('hidden');
         }, 1000);
+    } else {
+        console.log("Modal will not be shown - already seen or element not found");
     }
 
-    // Close modal when form is submitted
+    // Handle form submission
     if (modalForm) {
         modalForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('visitor-name').value;
             const telegramHandle = document.getElementById('telegram-handle').value;
-            const reason = document.querySelector('input[name="reason"]:checked').value;
+            const reasonElement = document.querySelector('input[name="reason"]:checked');
+
+            // Check if a reason was selected
+            if (!reasonElement) {
+                alert("Please select a reason for your visit.");
+                return;
+            }
+
+            const reason = reasonElement.value;
 
             // Save to localStorage that user has seen the modal
             localStorage.setItem('modalShown', 'true');
@@ -39,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const chatId = window.env && window.env.CHAT_ID;
 
             if (botToken && chatId) {
+                console.log("Sending message to Telegram...");
                 fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
                     method: 'POST',
                     headers: {
@@ -60,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
             } else {
                 console.error("Bot token or chat ID is not defined in window.env.");
+                console.log("window.env:", window.env);
                 alert("Telegram configuration is missing.");
             }
 
@@ -67,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Skip button closes modal
     if (modalSkip) {
         modalSkip.addEventListener('click', function() {
             localStorage.setItem('modalShown', 'true');

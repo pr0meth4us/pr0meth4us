@@ -64,19 +64,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Save language preference
         localStorage.setItem('language', lang);
     }
 
-    /**
-     * Updates the display text of the language selector button
-     * @param {string} lang - The language code ('en' or 'kh')
-     */
     function updateLanguageDisplay(lang) {
         currentLanguageText.textContent = lang.toUpperCase();
     }
 
-    // Handle language selection
     languageLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -84,16 +78,13 @@ document.addEventListener('DOMContentLoaded', function () {
             updateLanguage(selectedLang);
             updateLanguageDisplay(selectedLang);
 
-            // Close the dropdown
             languageOptions.classList.add('hidden');
         });
     });
 
-    // Toggle mobile menu
     mobileMenuButton.addEventListener('click', function() {
         mobileMenu.classList.toggle('hidden');
     });
 
-    // Initialize translations
     fetchTranslations();
 });
