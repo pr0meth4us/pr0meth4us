@@ -31,10 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     async function fetchTranslations() {
         try {
-            const response = await fetch('/assets/translations.json');
+            const response = await fetch('/pr0meth4us/assets/translations.json');
             translations = await response.json();
 
-            // Set initial language from localStorage or default to English
             const currentLang = localStorage.getItem('language') || 'en';
             updateLanguage(currentLang);
             updateLanguageDisplay(currentLang);
@@ -43,10 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    /**
-     * Updates the text content of all translatable elements
-     * @param {string} lang - The language code ('en' or 'kh')
-     */
     function updateLanguage(lang) {
         translatableElements.forEach(el => {
             const key = el.getAttribute('data-translate');
@@ -55,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Update active state in dropdown
         languageLinks.forEach(link => {
             if (link.getAttribute('data-lang') === lang) {
                 link.classList.add('font-bold');

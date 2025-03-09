@@ -7,15 +7,15 @@ welcome_text: Welcome
 intro_text: Built up this portfolio as a way to work around the LinkedIn formality.
 buttons:
   - text: About Me
-    url: /about
+    url: /pr0meth4us/about
     translate_key: about
     primary: true
   - text: Coding Projects
-    url: /projects
+    url: /pr0meth4us/projects
     translate_key: projects
     primary: false
   - text: Papers
-    url: /papers
+    url: /pr0meth4us/papers
     translate_key: papers
     primary: false
 ---
