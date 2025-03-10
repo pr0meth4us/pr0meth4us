@@ -1,5 +1,8 @@
-prometheus:
-  Pr0meth4us was my choice for GitHub - not because I resemble the fire-stealing Titan in any meaningful way (except for the rebelliousness and defiance but for ungodly causes), but because I happened to be in my Oppenheimer obsession era. The original "Prometheus" username was unavailable, so Pr0meth4us with its strategic numbers became my identity.
+prometheus: >
+  Pr0meth4us was my choice for GitHub - not because I resemble the fire-stealing Titan or he inspires me in any meaningful way 
+  (except for the rebelliousness and defiance but for ungodly causes), but because I happened to be in my 
+  Oppenheimer obsession era. The original "Prometheus" username was unavailable, so Pr0meth4us with its 
+  strategic numbers became my identity.
 
 skills:
   - Data Analysis
@@ -8,10 +11,16 @@ skills:
   - Diplomacy
   - Full-Stack Web Development
 
-socials:
-  - platform: LinkedIn
-    url: https://www.linkedin.com/in/nernnnnnnn/
-  - platform: GitHub
-    url: https://github.com/pr0meth4us/
-  - platform: Telegram
-    url: https://t.me/nernnnnnnn
+languages:
+  - language: "Khmer"
+    proficiency: "Native"
+  - language: "English"
+    proficiency: "Fluent"
+
+birth_year: "2004"
+birthplace: "Kompong Thom"
+current_location: "Phnom Penh"
+personality_type: ISTP
+
+cv_link: "/cv"
+cv_text: "View my complete CV"

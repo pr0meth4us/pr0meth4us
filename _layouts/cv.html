@@ -1,0 +1,86 @@
+---
+layout: default
+title: Curriculum Vitae
+permalink: /cv/
+---
+
+<div class="space-y-10">
+    <div class="text-center">
+        <h1 class="text-4xl font-bold mb-2">{{ site.data.cv.name }}</h1>
+        <div class="flex justify-center space-x-4 flex-wrap">
+            {% for contact in site.data.cv.contact_info %}
+            <a href="{{ contact.url }}" {% if contact.external %}target="_blank"{% endif %} class="text-blue-600 hover:underline">{{ contact.text }}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <section>
+        <h2 class="text-2xl font-bold mb-4 pb-2 border-b-2 border-gray-200">Career Objective</h2>
+        <p class="text-gray-700">
+            {{ site.data.cv.objective }}
+        </p>
+    </section>
+
+    <section>
+        <h2 class="text-2xl font-bold mb-4 pb-2 border-b-2 border-gray-200">Professional Experience</h2>
+
+        {% for experience in site.data.cv.experience %}
+        <div class="mb-8">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                <h3 class="text-xl font-semibold">{{ experience.organization }}</h3>
+                <p class="text-gray-600">{{ experience.period }}</p>
+            </div>
+            <p class="text-lg font-medium text-gray-800 mb-2">{{ experience.position }}</p>
+            <ul class="list-disc pl-5 text-gray-700">
+                {% for responsibility in experience.responsibilities %}
+                <li>{{ responsibility }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section>
+        <h2 class="text-2xl font-bold mb-4 pb-2 border-b-2 border-gray-200">Education</h2>
+
+        {% for education in site.data.cv.education %}
+        <div class="mb-6">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                <h3 class="text-xl font-semibold">{{ education.institution }}</h3>
+                <p class="text-gray-600">{{ education.period }}</p>
+            </div>
+            <p class="text-lg font-medium text-gray-800">{{ education.degree }}</p>
+            {% if education.details %}
+            <ul class="list-disc pl-5 mt-2 text-gray-700">
+                {% for detail in education.details %}
+                <li>{{ detail }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </section>
+
+    <section>
+        <h2 class="text-2xl font-bold mb-4 pb-2 border-b-2 border-gray-200">Skills & Certifications</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for skill_category in site.data.cv.skills %}
+            <div>
+                <h3 class="text-lg font-semibold mb-2">{{ skill_category.category }}</h3>
+                <ul class="list-disc pl-5 text-gray-700">
+                    {% for skill in skill_category.items %}
+                    <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div class="text-center mt-8">
+        <a href="{{ site.data.cv.pdf_url }}" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md inline-block transition duration-300">
+            Download CV as PDF
+        </a>
+    </div>
+</div>

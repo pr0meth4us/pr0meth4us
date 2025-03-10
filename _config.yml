@@ -5,6 +5,43 @@ description: >-
 baseurl: "/pr0meth4us"
 url: "https://pr0meth4us.github.io"
 
+navigation:
+  - text: "Home"
+    url: "/"
+    translate_key: "home"
+    primary: true
+  - text: "About Me"
+    url: "/about"
+    translate_key: "about"
+    primary: false
+  - text: "Coding Projects"
+    url: "/projects"
+    translate_key: "projects"
+    primary: false
+  - text: "Papers"
+    url: "/papers"
+    translate_key: "papers"
+    primary: false
+  - text: "Others"
+    url: "/misc"
+    translate_key: "misc"
+    primary: false
+
+contact_info:
+  - type: "email"
+    url: "mailto:phearaneron.soeung@gmail.com"
+  - type: "phone"
+    text: "+855 962021314"
+    url: "tel:+855962021314"
+  - type: "github"
+    text: "github.com/pr0meth4us"
+    url: "https://github.com/pr0meth4us"
+  - type: "linkedin"
+    text: "linkedin.com/in/nernnnnnnn/"
+    url: "https://linkedin.com/in/nernnnnnnn/"
+  - type: "telegram"
+    url: "https://t.me/nernnnnnnn"
+
 markdown: kramdown
 plugins:
   - jekyll-feed

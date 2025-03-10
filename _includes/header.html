@@ -7,21 +7,25 @@
             </a>
         </div>
 
-        <div class="md:hidden">
-            <input type="checkbox" id="menu-toggle" class="hidden">
+        <div class="md:hidden relative">
+            <input type="checkbox" id="menu-toggle" class="peer hidden">
             <label for="menu-toggle" class="p-2 cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </label>
 
-            <div class="absolute left-0 right-0 top-[calc(4rem-1px)] bg-white border-b border-gray-300 hidden peer-checked:block" id="mobile-menu">
+            <div class="absolute top-16 left-0 w-full bg-white border-b border-gray-300 hidden peer-checked:flex flex-col shadow-md z-50" id="mobile-menu">
                 <div class="container mx-auto px-4 py-3 space-y-2">
-                    <a href="{{ '/' | relative_url }}" class="block py-2 font-medium" data-translate="home">Home</a>
-                    <a href="{{ '/about' | relative_url }}" class="block py-2 font-medium" data-translate="about">About Me</a>
-                    <a href="{{ '/projects' | relative_url }}" class="block py-2 font-medium" data-translate="projects">Coding Projects</a>
-                    <a href="{{ '/papers' | relative_url }}" class="block py-2 font-medium" data-translate="papers">Papers</a>
-                    <a href="{{ '/misc' | relative_url }}" class="block py-2 font-medium" data-translate="misc">Others</a>
+                    {% for item in site.navigation %}
+                    {% assign item_url = item.url | remove: ".html" %}
+                    {% assign page_url = page.url | remove: ".html" | remove: site.baseurl %}
+                    <a href="{{ item.url | relative_url }}"
+                       class="block py-2 font-medium {% if page_url == item_url %}text-blue-600 font-bold{% else %}text-gray-800 hover:text-blue-600{% endif %} transition"
+                       data-translate="{{ item.translate_key }}">
+                        {{ item.text }}
+                    </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -31,21 +35,15 @@
         {% assign hover_classes = "hover:text-blue-600" %}
 
         <nav class="hidden md:flex space-x-8 py-4 font-medium">
-            <a href="{{ '/' | relative_url }}" class="{{ base_classes }} {% if page.url == '/' %}{{ active_classes }}{% endif %}" data-translate="home">
-                Home
+            {% for item in site.navigation %}
+            {% assign item_url = item.url | remove: ".html" %}
+            {% assign page_url = page.url | remove: ".html" | remove: site.baseurl %}
+            <a href="{{ item.url | relative_url }}"
+               class="{{ base_classes }} {{ hover_classes }} {% if page_url == item_url %}{{ active_classes }}{% endif %}"
+               data-translate="{{ item.translate_key }}">
+                {{ item.text }}
             </a>
-            <a href="{{ '/about' | relative_url }}" class="{{ base_classes }} {% if page.url == '/about' or page.url == '/about.html' %}{{ active_classes }}{% endif %}" data-translate="about">
-                About Me
-            </a>
-            <a href="{{ '/projects' | relative_url }}" class="{{ base_classes }} {% if page.url == '/projects' or page.url == '/projects.html' %}{{ active_classes }}{% endif %}" data-translate="projects">
-                Coding Projects
-            </a>
-            <a href="{{ '/papers' | relative_url }}" class="{{ base_classes }} {{ hover_classes }} {% if page.url == '/papers' or page.url == '/papers.html' %}{{ active_classes }}{% endif %}" data-translate="papers">
-                Papers
-            </a>
-            <a href="{{ '/misc' | relative_url }}" class="{{ base_classes }} {{ hover_classes }} {% if page.url == '/misc' or page.url == '/misc.html' %}{{ active_classes }}{% endif %}" data-translate="misc">
-                Others
-            </a>
+            {% endfor %}
         </nav>
 
         <div class="relative inline-block text-left" id="language-dropdown">
