@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="/pr0meth4us/assets/js/scripts.js"></script>
     <script src="/pr0meth4us/assets/js/translation.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
 
@@ -23,21 +24,57 @@
             </a>
         </div>
 
-        <div class="md:hidden">
-            <input type="checkbox" id="menu-toggle" class="hidden">
+        <div class="md:hidden relative">
+            <input type="checkbox" id="menu-toggle" class="peer hidden">
             <label for="menu-toggle" class="p-2 cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </label>
 
-            <div class="absolute left-0 right-0 top-[calc(4rem-1px)] bg-white border-b border-gray-300 hidden peer-checked:block" id="mobile-menu">
+            <div class="absolute top-16 left-0 w-full bg-white border-b border-gray-300 hidden peer-checked:flex flex-col shadow-md z-50" id="mobile-menu">
                 <div class="container mx-auto px-4 py-3 space-y-2">
-                    <a href="/pr0meth4us/" class="block py-2 font-medium" data-translate="home">Home</a>
-                    <a href="/pr0meth4us/about" class="block py-2 font-medium" data-translate="about">About Me</a>
-                    <a href="/pr0meth4us/projects" class="block py-2 font-medium" data-translate="projects">Coding Projects</a>
-                    <a href="/pr0meth4us/papers" class="block py-2 font-medium" data-translate="papers">Papers</a>
-                    <a href="/pr0meth4us/misc" class="block py-2 font-medium" data-translate="misc">Others</a>
+                    
+                    
+                    
+                    <a href="/pr0meth4us/"
+                       class="block py-2 font-medium text-gray-800 hover:text-blue-600 transition"
+                       data-translate="home">
+                        Home
+                    </a>
+                    
+                    
+                    
+                    <a href="/pr0meth4us/about"
+                       class="block py-2 font-medium text-gray-800 hover:text-blue-600 transition"
+                       data-translate="about">
+                        About Me
+                    </a>
+                    
+                    
+                    
+                    <a href="/pr0meth4us/projects"
+                       class="block py-2 font-medium text-blue-600 font-bold transition"
+                       data-translate="projects">
+                        Coding Projects
+                    </a>
+                    
+                    
+                    
+                    <a href="/pr0meth4us/papers"
+                       class="block py-2 font-medium text-gray-800 hover:text-blue-600 transition"
+                       data-translate="papers">
+                        Papers
+                    </a>
+                    
+                    
+                    
+                    <a href="/pr0meth4us/misc"
+                       class="block py-2 font-medium text-gray-800 hover:text-blue-600 transition"
+                       data-translate="misc">
+                        Others
+                    </a>
+                    
                 </div>
             </div>
         </div>
@@ -47,21 +84,47 @@
         
 
         <nav class="hidden md:flex space-x-8 py-4 font-medium">
-            <a href="/pr0meth4us/" class="text-gray-800 transition duration-300 relative py-1 px-2 " data-translate="home">
+            
+            
+            
+            <a href="/pr0meth4us/"
+               class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 "
+               data-translate="home">
                 Home
             </a>
-            <a href="/pr0meth4us/about" class="text-gray-800 transition duration-300 relative py-1 px-2 " data-translate="about">
+            
+            
+            
+            <a href="/pr0meth4us/about"
+               class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 "
+               data-translate="about">
                 About Me
             </a>
-            <a href="/pr0meth4us/projects" class="text-gray-800 transition duration-300 relative py-1 px-2 font-bold text-blue-600" data-translate="projects">
+            
+            
+            
+            <a href="/pr0meth4us/projects"
+               class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 font-bold text-blue-600"
+               data-translate="projects">
                 Coding Projects
             </a>
-            <a href="/pr0meth4us/papers" class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 " data-translate="papers">
+            
+            
+            
+            <a href="/pr0meth4us/papers"
+               class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 "
+               data-translate="papers">
                 Papers
             </a>
-            <a href="/pr0meth4us/misc" class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 " data-translate="misc">
+            
+            
+            
+            <a href="/pr0meth4us/misc"
+               class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 "
+               data-translate="misc">
                 Others
             </a>
+            
         </nav>
 
         <div class="relative inline-block text-left" id="language-dropdown">
@@ -81,7 +144,6 @@
         </div>
     </div>
 </header>
-
 
 <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Curriculum Vitae - SOEUNG Phearaeron</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="/pr0meth4us/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/pr0meth4us/assets/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="/pr0meth4us/assets/js/scripts.js"></script>
+    <script src="/pr0meth4us/assets/js/translation.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+
+<header class="shadow-sm bg-white py-4 px-6 border-b border-gray-300">
+    <div class="container mx-auto flex justify-between items-center">
+        <div>
+            <a href="/pr0meth4us/" class="flex items-center space-x-3 text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
+                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-12 w-auto">
+                <span class="lg:block hidden">SOEUNG Phearaeron</span>
+            </a>
+        </div>
+
+        <div class="md:hidden relative">
+            <input type="checkbox" id="menu-toggle" class="peer hidden">
+            <label for="menu-toggle" class="p-2 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </label>
+
+            <div class="absolute top-16 left-0 w-full bg-white border-b border-gray-300 hidden peer-checked:flex flex-col shadow-md z-50" id="mobile-menu">
+                <div class="container mx-auto px-4 py-3 space-y-2">
+                    
+                    
+                    
+                    <a href="/pr0meth4us/"
+                       class="block py-2 font-medium text-gray-800 hover:text-blue-600 transition"
+                       data-translate="home">
+                        Home
+                    </a>
+                    
+                    
+                    
+                    <a href="/pr0meth4us/about"
+                       class="block py-2 font-medium text-gray-800 hover:text-blue-600 transition"
+                       data-translate="about">
+                        About Me
+                    </a>
+                    
+                    
+                    
+                    <a href="/pr0meth4us/projects"
+                       class="block py-2 font-medium text-gray-800 hover:text-blue-600 transition"
+                       data-translate="projects">
+                        Coding Projects
+                    </a>
+                    
+                    
+                    
+                    <a href="/pr0meth4us/papers"
+                       class="block py-2 font-medium text-gray-800 hover:text-blue-600 transition"
+                       data-translate="papers">
+                        Papers
+                    </a>
+                    
+                    
+                    
+                    <a href="/pr0meth4us/misc"
+                       class="block py-2 font-medium text-gray-800 hover:text-blue-600 transition"
+                       data-translate="misc">
+                        Others
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+        
+        
+        
+
+        <nav class="hidden md:flex space-x-8 py-4 font-medium">
+            
+            
+            
+            <a href="/pr0meth4us/"
+               class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 "
+               data-translate="home">
+                Home
+            </a>
+            
+            
+            
+            <a href="/pr0meth4us/about"
+               class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 "
+               data-translate="about">
+                About Me
+            </a>
+            
+            
+            
+            <a href="/pr0meth4us/projects"
+               class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 "
+               data-translate="projects">
+                Coding Projects
+            </a>
+            
+            
+            
+            <a href="/pr0meth4us/papers"
+               class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 "
+               data-translate="papers">
+                Papers
+            </a>
+            
+            
+            
+            <a href="/pr0meth4us/misc"
+               class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 "
+               data-translate="misc">
+                Others
+            </a>
+            
+        </nav>
+
+        <div class="relative inline-block text-left" id="language-dropdown">
+            <button type="button" id="language-menu-button" class="inline-flex justify-between items-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false" aria-haspopup="true">
+                <span id="current-language">EN</span>
+                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </button>
+
+            <div id="language-options" class="hidden origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="language-menu-button" tabindex="-1">
+                <div class="py-1" role="none">
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" tabindex="-1" data-lang="en">English</a>
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" tabindex="-1" data-lang="kh">Khmer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+    <div class="space-y-10">
+    <div class="text-center">
+        <h1 class="text-4xl font-bold mb-2">SOEUNG Phearaneron</h1>
+        <div class="flex justify-center space-x-4 flex-wrap">
+            
+            <a href="mailto:phearaneron.soeung@gmail.com"  class="text-blue-600 hover:underline">phearaneron.soeung@gmail.com</a>
+            
+            <a href="tel:+855962021314"  class="text-blue-600 hover:underline">+855 962021314</a>
+            
+            <a href="https://linkedin.com/in/nernnnnnnn/" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/nernnnnnnn/</a>
+            
+            <a href="https://github.com/pr0meth4us" target="_blank" class="text-blue-600 hover:underline">github.com/pr0meth4us</a>
+            
+        </div>
+    </div>
+
+    <section>
+        <h2 class="text-2xl font-bold mb-4 pb-2 border-b-2 border-gray-200">Career Objective</h2>
+        <p class="text-gray-700">
+            Determined to pursue a career as a policy researcher focusing on digital governance, combining expertise in Information Technology and International Relations. Leveraging hands-on experience from CSEAS and Digital Government Committee, along with technical skills in programming, to develop evidence-based policy solutions for Cambodia's digital future.
+        </p>
+    </section>
+
+    <section>
+        <h2 class="text-2xl font-bold mb-4 pb-2 border-b-2 border-gray-200">Professional Experience</h2>
+
+        
+        <div class="mb-8">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                <h3 class="text-xl font-semibold">Transparency International</h3>
+                <p class="text-gray-600">Jan 2025 - March 2025</p>
+            </div>
+            <p class="text-lg font-medium text-gray-800 mb-2">Young Research Fellow</p>
+            <ul class="list-disc pl-5 text-gray-700">
+                
+                <li>Received comprehensive training and mentorship in climate governance.</li>
+                
+                <li>Conducting in-depth research on climate issues and authoring a policy brief with actionable recommendations.</li>
+                
+            </ul>
+        </div>
+        
+        <div class="mb-8">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                <h3 class="text-xl font-semibold">American University of Phnom Penh</h3>
+                <p class="text-gray-600">Aug 2024 - Present</p>
+            </div>
+            <p class="text-lg font-medium text-gray-800 mb-2">Tutor</p>
+            <ul class="list-disc pl-5 text-gray-700">
+                
+                <li>Delivering tailored one-on-one tutoring sessions in History and Political Science.</li>
+                
+                <li>Facilitating knowledge-sharing workshops to familiarize freshmen with university environment.</li>
+                
+            </ul>
+        </div>
+        
+        <div class="mb-8">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                <h3 class="text-xl font-semibold">Center for Southeast Asian Studies (CSEAS), IISPP</h3>
+                <p class="text-gray-600">Feb 2024 - Oct 2024</p>
+            </div>
+            <p class="text-lg font-medium text-gray-800 mb-2">Young Research Fellow</p>
+            <ul class="list-disc pl-5 text-gray-700">
+                
+                <li>Gained specialized training and mentorship.</li>
+                
+                <li>Conducted extensive research on Southeast Asia's socio-political issues.</li>
+                
+                <li>Authored policy brief and commentary featured in the Center's publications.</li>
+                
+            </ul>
+        </div>
+        
+        <div class="mb-8">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                <h3 class="text-xl font-semibold">Digital Government Transformation Department, Digital Government Committee</h3>
+                <p class="text-gray-600">Jun 2023 - Aug 2024</p>
+            </div>
+            <p class="text-lg font-medium text-gray-800 mb-2">Intern</p>
+            <ul class="list-disc pl-5 text-gray-700">
+                
+                <li>Web scraping (Selenium, Scrapy) for Khmer-language data collection.</li>
+                
+                <li>Contributed to Cambodia Government Design System (Jekyll, Sass, Bootstrap, Content Writing and Translation).</li>
+                
+                <li>Developed a WordPress theme (React, Bootstrap, CI/CD).</li>
+                
+                <li>Gained experience in technical documentation, diplomacy, and liaising.</li>
+                
+            </ul>
+        </div>
+        
+    </section>
+
+    <section>
+        <h2 class="text-2xl font-bold mb-4 pb-2 border-b-2 border-gray-200">Education</h2>
+
+        
+        <div class="mb-6">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                <h3 class="text-xl font-semibold">American University of Phnom Penh</h3>
+                <p class="text-gray-600">2022 - MAY 2025</p>
+            </div>
+            <p class="text-lg font-medium text-gray-800">Bachelor of Science in Information and Communication Technology</p>
+            
+            <ul class="list-disc pl-5 mt-2 text-gray-700">
+                
+                <li>Skills: Full Stack Web Development, CI/CD, cybersecurity, Data Analysis & Visualization</li>
+                
+            </ul>
+            
+        </div>
+        
+        <div class="mb-6">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                <h3 class="text-xl font-semibold">Institute for International Studies and Public Policy</h3>
+                <p class="text-gray-600">2021 - JULY 2025</p>
+            </div>
+            <p class="text-lg font-medium text-gray-800">Bachelor of Arts in International Relations</p>
+            
+        </div>
+        
+    </section>
+
+    <section>
+        <h2 class="text-2xl font-bold mb-4 pb-2 border-b-2 border-gray-200">Skills & Certifications</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Technical Skills</h3>
+                <ul class="list-disc pl-5 text-gray-700">
+                    
+                    <li><span class="font-medium">Frontend Development:</span> React, Bootstrap, Tailwind, Next.js, WordPress Theme Development</li>
+                    
+                    <li><span class="font-medium">Backend Development:</span> Spring Boot, Node.js, Flask, MongoDB</li>
+                    
+                    <li><span class="font-medium">Data Science & Analytics:</span> Data Analysis, Visualization (Power BI, Matplotlib, Seaborn)</li>
+                    
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Other Skills & Certifications</h3>
+                <ul class="list-disc pl-5 text-gray-700">
+                    
+                    <li>Research & Policy Development</li>
+                    
+                    <li><span class="font-medium">Certifications:</span> AWS Cloud Data Pipeline Builder, AWS Cloud Architecting, Cisco Networking Essentials</li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+
+    <div class="text-center mt-8">
+        <a href="https://docs.google.com/presentation/d/1NRitWO8yetD6M1swKvSy2vQ-Z0PiS5AVrqFESCYNUTA/export/pdf" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md inline-block transition duration-300">
+            Download CV as PDF
+        </a>
+    </div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="py-6 px-6 border-t border-gray-300 text-center text-gray-600">
+    <div class="container mx-auto">
+        <p>© 2025 Pr0meth4us | All Rights Reserved</p>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
