@@ -8,31 +8,49 @@
     <link rel="icon" href="/pr0meth4us/assets/images/favicon.ico">
     <link rel="stylesheet" href="/pr0meth4us/assets/css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
 
-<!-- Header -->
+<!-- Header with CSS-only mobile navigation -->
 <header class="shadow-sm bg-white py-4 px-6 border-b border-gray-300">
     <div class="container mx-auto flex justify-between items-center">
         <div>
-            <a href="/pr0meth4us/" class="text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
-                SOEUNG Phearaeron
+            <a href="/pr0meth4us/" class="flex items-center space-x-3 text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
+                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-12 w-auto">
+                <span>SOEUNG Phearaeron</span>
             </a>
         </div>
 
+        <!-- CSS-only mobile menu -->
+        <div class="md:hidden">
+            <input type="checkbox" id="menu-toggle" class="hidden">
+            <label for="menu-toggle" class="p-2 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </label>
+
+            <div class="absolute left-0 right-0 top-[calc(4rem-1px)] bg-white border-b border-gray-300 hidden peer-checked:block" id="mobile-menu">
+                <div class="container mx-auto px-4 py-3 space-y-2">
+                    <a href="/pr0meth4us/" class="block py-2 font-medium" data-translate="home">Home</a>
+                    <a href="/pr0meth4us/about" class="block py-2 font-medium" data-translate="about">About Me</a>
+                    <a href="/pr0meth4us/projects" class="block py-2 font-medium" data-translate="projects">Coding Projects</a>
+                    <a href="/pr0meth4us/papers" class="block py-2 font-medium" data-translate="papers">Papers</a>
+<!--                    <a href="/pr0meth4us/misc" class="block py-2 font-medium" data-translate="misc">Miscellaneous</a>-->
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop navigation -->
         <nav class="hidden md:flex space-x-6">
             
             <a href="/pr0meth4us/" class="font-medium hover:text-gray-600 hover:underline transition duration-300 " data-translate="home">Home</a>
             <a href="/pr0meth4us/about" class="font-medium hover:text-gray-600 hover:underline transition duration-300 " data-translate="about">About Me</a>
             <a href="/pr0meth4us/projects" class="font-medium hover:text-gray-600 hover:underline transition duration-300 font-bold" data-translate="projects">Coding Projects</a>
             <a href="/pr0meth4us/papers" class="font-medium hover:text-gray-600 hover:underline transition duration-300 " data-translate="papers">Papers</a>
+<!--            <a href="/pr0meth4us/misc" class="font-medium hover:text-gray-600 hover:underline transition duration-300 " data-translate="misc">Miscellaneous</a>-->
         </nav>
-
-        <button class="md:hidden p-2" id="mobile-menu-button">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
 
         <div class="relative inline-block text-left" id="language-dropdown">
             <button type="button" id="language-menu-button" class="inline-flex justify-between items-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false" aria-haspopup="true">
@@ -52,17 +70,14 @@
     </div>
 </header>
 
-<!-- Mobile Menu (hidden by default) -->
-<nav class="md:hidden bg-white border-b border-gray-300 hidden" id="mobile-menu">
-    <div class="container mx-auto px-4 py-3 space-y-2">
-        <a href="/pr0meth4us/" class="block py-2 font-medium" data-translate="home">Home</a>
-        <a href="/pr0meth4us/about" class="block py-2 font-medium" data-translate="about">About Me</a>
-        <a href="/pr0meth4us/projects" class="block py-2 font-medium" data-translate="projects">Coding Projects</a>
-        <a href="/pr0meth4us/papers" class="block py-2 font-medium" data-translate="papers">Papers</a>
-    </div>
-</nav>
+<!-- Additional CSS to add to your stylesheets -->
+<style>
+    /* Make the mobile menu appear when checkbox is checked */
+    #menu-toggle:checked ~ #mobile-menu {
+        display: block;
+    }
+</style>
 
-<!-- Main Content -->
 <main class="p-8 max-w-6xl mx-auto">
     <h1 class="text-3xl font-bold mb-8" data-translate="projects">Coding Projects</h1>
 
@@ -75,13 +90,11 @@
             </div>
             
 
-            <!-- Project Details -->
             <div class="p-6">
                 <h2 class="text-2xl font-bold mb-3">Rachana.gov.kh</h2>
 
                 <p class="mb-4 text-gray-700">Government design system to universalize the interface of digital public services.</p>
 
-                <!-- Tech tags -->
                 <div class="mb-4 flex flex-wrap gap-2">
                     
                     <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">React</span>
@@ -94,7 +107,6 @@
                     
                 </div>
 
-                <!-- Links -->
                 <div class="flex flex-wrap gap-3">
                     
                     
@@ -118,13 +130,11 @@
             </div>
             
 
-            <!-- Project Details -->
             <div class="p-6">
                 <h2 class="text-2xl font-bold mb-3">Rachana Wordpress</h2>
 
                 <p class="mb-4 text-gray-700">Same purpose as Rachana but is based on WordPress.</p>
 
-                <!-- Tech tags -->
                 <div class="mb-4 flex flex-wrap gap-2">
                     
                     <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">WordPress</span>
@@ -135,7 +145,6 @@
                     
                 </div>
 
-                <!-- Links -->
                 <div class="flex flex-wrap gap-3">
                     
                     
@@ -161,13 +170,11 @@
             </div>
             
 
-            <!-- Project Details -->
             <div class="p-6">
                 <h2 class="text-2xl font-bold mb-3">AUPP eCampus</h2>
 
                 <p class="mb-4 text-gray-700">My final project. An eLearning portal designed to be cost efficient by utilizing the 'free trail' provisions from various providers.</p>
 
-                <!-- Tech tags -->
                 <div class="mb-4 flex flex-wrap gap-2">
                     
                     <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">React</span>
@@ -180,7 +187,6 @@
                     
                 </div>
 
-                <!-- Links -->
                 <div class="flex flex-wrap gap-3">
                     
                     
@@ -206,13 +212,11 @@
             </div>
             
 
-            <!-- Project Details -->
             <div class="p-6">
                 <h2 class="text-2xl font-bold mb-3">Mnemosyne</h2>
 
                 <p class="mb-4 text-gray-700">Named after the goddess of memory. This app recreate TikTok conversation/chatlogs with a nice-looking interface (because TikTok automatically timebomb delete your texts). Processes are done on the client side, no server side process, no database.</p>
 
-                <!-- Tech tags -->
                 <div class="mb-4 flex flex-wrap gap-2">
                     
                     <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">NextJs</span>
@@ -221,7 +225,6 @@
                     
                 </div>
 
-                <!-- Links -->
                 <div class="flex flex-wrap gap-3">
                     
                     
@@ -240,13 +243,52 @@
             </div>
         </div>
         
+        <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+            
+            <div class="h-48 bg-gray-100 flex items-center justify-center space-x-4">
+                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-20 w-auto">
+                <i class="fab fa-github text-gray-400 text-6xl"></i>
+            </div>
+            
+
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-3">Customizable Form</h2>
+
+                <p class="mb-4 text-gray-700">This is a misnomer. It's actually a hard coded survey form. I made it because Google Form don't let me adjust the size of the picture options. Maybe future development is to make it really customizable.</p>
+
+                <div class="mb-4 flex flex-wrap gap-2">
+                    
+                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">NextJs</span>
+                    
+                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Mongo</span>
+                    
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                    
+                    
+                    <a href="https://github.com/pr0meth4us/customizable-form" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                        GitHub
+                    </a>
+                    
+                    
+                    
+                    <a href="https://content-design-research-spn.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                        Website
+                    </a>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
     </div>
 </main>
 
 <!-- Footer -->
 <footer class="py-6 px-6 border-t border-gray-300 text-center text-gray-600">
     <div class="container mx-auto">
-        <p>© 2025 SOEUNG Phearaeron | All Rights Reserved</p>
+        <p>© 2025 Pr0meth4us | All Rights Reserved</p>
     </div>
 </footer>
 
