@@ -1,0 +1,13 @@
+birth_year: "2004"
+birthplace: "Kompong Thom"
+current_location: "Phnom Penh"
+hobbies:
+  - Reading
+  - Travel
+  - Photography
+  # Add more hobbies as needed
+personality:
+  - Analytical
+  - Creative
+  - Curious
+  # Add more traits as needed

@@ -18,7 +18,7 @@ buttons:
     url: /pr0meth4us/papers
     translate_key: papers
     primary: false
-#  - text: Miscellaneous
-#    url: /pr0meth4us/misc
-#    translate_key: misc
+  - text: Others
+    url: /pr0meth4us/misc
+    translate_key: misc
 ---

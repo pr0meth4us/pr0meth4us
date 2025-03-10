@@ -1,14 +1,12 @@
-<!-- Header with CSS-only mobile navigation -->
 <header class="shadow-sm bg-white py-4 px-6 border-b border-gray-300">
     <div class="container mx-auto flex justify-between items-center">
         <div>
             <a href="{{ '/' | relative_url }}" class="flex items-center space-x-3 text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
                 <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-12 w-auto">
-                <span>{{ site.title }}</span>
+                <span class="lg:block hidden">{{ site.title }}</span>
             </a>
         </div>
 
-        <!-- CSS-only mobile menu -->
         <div class="md:hidden">
             <input type="checkbox" id="menu-toggle" class="hidden">
             <label for="menu-toggle" class="p-2 cursor-pointer">
@@ -23,19 +21,31 @@
                     <a href="{{ '/about' | relative_url }}" class="block py-2 font-medium" data-translate="about">About Me</a>
                     <a href="{{ '/projects' | relative_url }}" class="block py-2 font-medium" data-translate="projects">Coding Projects</a>
                     <a href="{{ '/papers' | relative_url }}" class="block py-2 font-medium" data-translate="papers">Papers</a>
-<!--                    <a href="{{ '/misc' | relative_url }}" class="block py-2 font-medium" data-translate="misc">Miscellaneous</a>-->
+                    <a href="{{ '/misc' | relative_url }}" class="block py-2 font-medium" data-translate="misc">Others</a>
                 </div>
             </div>
         </div>
 
-        <!-- Desktop navigation -->
-        <nav class="hidden md:flex space-x-6">
-            {% assign current_page = page.url | split: '/' | last %}
-            <a href="{{ '/' | relative_url }}" class="font-medium hover:text-gray-600 hover:underline transition duration-300 {% if current_page == '' %}font-bold{% endif %}" data-translate="home">Home</a>
-            <a href="{{ '/about' | relative_url }}" class="font-medium hover:text-gray-600 hover:underline transition duration-300 {% if current_page == 'about.html' %}font-bold{% endif %}" data-translate="about">About Me</a>
-            <a href="{{ '/projects' | relative_url }}" class="font-medium hover:text-gray-600 hover:underline transition duration-300 {% if current_page == 'projects.html' %}font-bold{% endif %}" data-translate="projects">Coding Projects</a>
-            <a href="{{ '/papers' | relative_url }}" class="font-medium hover:text-gray-600 hover:underline transition duration-300 {% if current_page == 'papers.html' %}font-bold{% endif %}" data-translate="papers">Papers</a>
-<!--            <a href="{{ '/misc' | relative_url }}" class="font-medium hover:text-gray-600 hover:underline transition duration-300 {% if current_page == 'misc.html' %}font-bold{% endif %}" data-translate="misc">Miscellaneous</a>-->
+        {% assign base_classes = "text-gray-800 transition duration-300 relative py-1 px-2" %}
+        {% assign active_classes = "font-bold text-blue-600" %}
+        {% assign hover_classes = "hover:text-blue-600" %}
+
+        <nav class="hidden md:flex space-x-8 py-4 font-medium">
+            <a href="{{ '/' | relative_url }}" class="{{ base_classes }} {% if page.url == '/' %}{{ active_classes }}{% endif %}" data-translate="home">
+                Home
+            </a>
+            <a href="{{ '/about' | relative_url }}" class="{{ base_classes }} {% if page.url == '/about' or page.url == '/about.html' %}{{ active_classes }}{% endif %}" data-translate="about">
+                About Me
+            </a>
+            <a href="{{ '/projects' | relative_url }}" class="{{ base_classes }} {% if page.url == '/projects' or page.url == '/projects.html' %}{{ active_classes }}{% endif %}" data-translate="projects">
+                Coding Projects
+            </a>
+            <a href="{{ '/papers' | relative_url }}" class="{{ base_classes }} {{ hover_classes }} {% if page.url == '/papers' or page.url == '/papers.html' %}{{ active_classes }}{% endif %}" data-translate="papers">
+                Papers
+            </a>
+            <a href="{{ '/misc' | relative_url }}" class="{{ base_classes }} {{ hover_classes }} {% if page.url == '/misc' or page.url == '/misc.html' %}{{ active_classes }}{% endif %}" data-translate="misc">
+                Others
+            </a>
         </nav>
 
         <div class="relative inline-block text-left" id="language-dropdown">
@@ -55,11 +65,3 @@
         </div>
     </div>
 </header>
-
-<!-- Additional CSS to add to your stylesheets -->
-<style>
-    /* Make the mobile menu appear when checkbox is checked */
-    #menu-toggle:checked ~ #mobile-menu {
-        display: block;
-    }
-</style>

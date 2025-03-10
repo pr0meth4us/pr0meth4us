@@ -9,12 +9,16 @@
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/translation.js' | relative_url }}" defer></script>
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
 
 {% include header.html %}
 
-{{ content }}
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+    {{ content }}
+</main>
 
 {% include footer.html %}
 
@@ -22,13 +26,5 @@
 {% include modal.html %}
 {% endif %}
 
-<script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/translation.js' | relative_url }}"></script>
-<script>
-    window.env = {
-        BOT_TOKEN: '{{ site.bot_token }}',
-        CHAT_ID: '{{ site.chat_id }}'
-    };
-</script>
 </body>
 </html>

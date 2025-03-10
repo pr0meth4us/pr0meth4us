@@ -8,11 +8,41 @@ layout: default
     <img src="{{ page.profile_image }}" alt="{{ site.title }}" class="mx-auto w-40 h-40 rounded-full shadow-lg object-cover mb-6">
 
     <!-- About Title -->
-    <h1 class="text-3xl font-bold mb-6" data-translate="about">{{ page.title }}</h1>
+    <h1 class="text-3xl font-bold mb-6" data-translate="about">About Me</h1>
 
     <!-- Bio -->
     <div class="prose prose-lg max-w-none mb-8">
         {{ content }}
+    </div>
+
+    <!-- Personal Information Section -->
+    <h2 class="text-2xl font-bold mb-4">Personal Info</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <div>
+            <h3 class="text-lg font-semibold mb-2">Background</h3>
+            <ul class="space-y-2">
+                <li><span class="font-medium">Year of Birth:</span> {{ site.data.personal.birth_year }}</li>
+                <li><span class="font-medium">Birthplace:</span> {{ site.data.personal.birthplace }}</li>
+                <li><span class="font-medium">Current Location:</span> {{ site.data.personal.current_location }}</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold mb-2">Interests & Traits</h3>
+            <div>
+                <h4 class="font-medium">Hobbies:</h4>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    {% for hobby in site.data.personal.hobbies %}
+                    <span class="inline-block bg-gray-200 text-gray-800 px-3 py-1 rounded text-sm">{{ hobby }}</span>
+                    {% endfor %}
+                </div>
+                <h4 class="font-medium">Personality:</h4>
+                <div class="flex flex-wrap gap-2">
+                    {% for trait in site.data.personal.personality %}
+                    <span class="inline-block bg-gray-200 text-gray-800 px-3 py-1 rounded text-sm">{{ trait }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- About Prometheus Section -->

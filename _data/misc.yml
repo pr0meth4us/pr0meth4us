@@ -1,55 +1,10 @@
-- title: "Japanese Garden Design Exploration"
-  description: "A photographic journey exploring traditional Japanese garden elements and their modern interpretations. Features images from various gardens."
+- title: "Liaison Officer"
+  date: "2024-05"
+  description: "I had the honor of serving as the liaison officer for the Laos delegation during their official visit to Cambodia. The Head of Delegation—His Excellency, the Minister of Technology and Communications of Laos—played an integral role (VVIP) at the Digital Government Forum (DGF). This event was organized by the Ministry of Post and Telecommunications of Cambodia (MPTC) and presided over by Samdech Moha Borvor Thipadei Hun Manet, the Prime Minister of Cambodia, and the Secretary General of ASEAN."
   images:
-    - "https://picsum.photos/200/300"
-    - "https://source.unsplash.com/200x300/?nature"
-    - "https://images.pexels.com/photos/285495/pexels-photo-285495.jpeg"
-    - "https://www.wallpapertip.com/wm/15602-nature-landscape-wallpaper.jpg"
-    - "https://i.imgur.com/7uo0XAb.jpg"
-  tags: ["photography", "japanese-design", "gardens", "architecture"]
-  link: "/misc/japanese-gardens"
-
-- title: "Urban Sketching Collection"
-  description: "A series of quick sketches capturing urban life and architecture in various cities. These drawings were created on-location using pen and watercolor."
-  images:
-    - "https://source.unsplash.com/200x300/?cats"
-    - "https://i.redd.it/bq3vzj7f3fj11.jpg"
-    - "https://www.pexels.com/photo/close-up-of-an-orange-flower-21400/"
-  tags: ["art", "sketching", "urban", "travel"]
-  link: "/misc/urban-sketches"
-
-- title: "Interactive Data Visualization on Climate Change"
-  description: "An interactive visualization exploring global temperature changes over the past century, with focus on regional impacts and potential future scenarios."
-  thumbnail: "https://source.unsplash.com/200x300/?space"
-  tags: ["data-viz", "climate", "interactive"]
-  link: "/misc/climate-visualization"
-
-- title: "Book Review Collection: Science & Technology"
-  description: "Detailed reviews of recent science and technology books, including insights on data science, AI ethics, and the future of technology."
-  images:
-    - "https://i.imgur.com/VeTfC3G.jpg"
-    - "https://images.unsplash.com/photo-1523266386226-bf6c7e8e89b4"
-  tags: ["reviews", "books", "science", "technology"]
-  link: "/misc/book-reviews"
-
-- title: "Personal Notes on Machine Learning Ethics"
-  description: "A collection of personal notes and reflections on ethical considerations in machine learning systems, focusing on bias, transparency, and accountability."
-  thumbnail: "https://www.pexels.com/photo/flower-bloom-blooming-plant-3371/"
-  tags: ["ethics", "machine-learning", "notes"]
-  link: "/misc/ml-ethics-notes"
-
-- title: "Handcrafted Furniture Design Concepts"
-  description: "A showcase of furniture design sketches and prototypes exploring the intersection of traditional woodworking techniques and modern aesthetics."
-  images:
-    - "https://source.unsplash.com/200x300/?ocean"
-    - "https://i.imgur.com/5Z6r4yD.jpg"
-    - "https://images.pexels.com/photos/342885/pexels-photo-342885.jpeg"
-    - "https://www.wallpapertip.com/wm/12701-animal-puppy-wallpaper.jpg"
-  tags: ["design", "furniture", "woodworking", "crafts"]
-  link: "/misc/furniture-designs"
-
-- title: "Educational Workshop Materials: Programming Fundamentals"
-  description: "Materials from workshops teaching programming fundamentals. Includes curriculum outlines, exercise sheets, and visual learning aids."
-  thumbnail: "https://source.unsplash.com/200x300/?mountains"
-  tags: ["education", "programming", "workshop"]
-  link: "/misc/programming-workshops"
+    - "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741593226/photo_2025-03-10_14-55-10_slhofl.jpg"
+    - "https://lh3.googleusercontent.com/pw/AP1GczMe5KQ2Y26TNG0wvz9MlGFy4NZ2umcW0VRaWcNYE6S0Tu_aRN7e7XexGPmuxcIPfyPyzOyXgUFUU_DMls_dMQDLYKoHC7s4dy7vfWJk9G9GeaBhBWSJ3GfsXm90Y-nhBHeF0sXeEKTC2JrLSBMhgUf1Ig=w1178-h1570-s-no-gm?authuser=0"
+  tags: ["diplomacy", "liaising", "digitaldiplomacy"]
+  reference:
+    text: "Learn more about DGF"
+    link: "https://kiripost.com/stories/cambodia-pushes-ahead-on-digital-journey"
