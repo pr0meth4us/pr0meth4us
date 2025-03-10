@@ -9,20 +9,20 @@
     <link rel="stylesheet" href="/pr0meth4us/assets/css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="/pr0meth4us/assets/js/scripts.js"></script>
+    <script src="/pr0meth4us/assets/js/translation.js" defer></script>
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
 
-<!-- Header with CSS-only mobile navigation -->
 <header class="shadow-sm bg-white py-4 px-6 border-b border-gray-300">
     <div class="container mx-auto flex justify-between items-center">
         <div>
             <a href="/pr0meth4us/" class="flex items-center space-x-3 text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
                 <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-12 w-auto">
-                <span>SOEUNG Phearaeron</span>
+                <span class="lg:block hidden">SOEUNG Phearaeron</span>
             </a>
         </div>
 
-        <!-- CSS-only mobile menu -->
         <div class="md:hidden">
             <input type="checkbox" id="menu-toggle" class="hidden">
             <label for="menu-toggle" class="p-2 cursor-pointer">
@@ -37,19 +37,31 @@
                     <a href="/pr0meth4us/about" class="block py-2 font-medium" data-translate="about">About Me</a>
                     <a href="/pr0meth4us/projects" class="block py-2 font-medium" data-translate="projects">Coding Projects</a>
                     <a href="/pr0meth4us/papers" class="block py-2 font-medium" data-translate="papers">Papers</a>
-<!--                    <a href="/pr0meth4us/misc" class="block py-2 font-medium" data-translate="misc">Miscellaneous</a>-->
+                    <a href="/pr0meth4us/misc" class="block py-2 font-medium" data-translate="misc">Others</a>
                 </div>
             </div>
         </div>
 
-        <!-- Desktop navigation -->
-        <nav class="hidden md:flex space-x-6">
-            
-            <a href="/pr0meth4us/" class="font-medium hover:text-gray-600 hover:underline transition duration-300 " data-translate="home">Home</a>
-            <a href="/pr0meth4us/about" class="font-medium hover:text-gray-600 hover:underline transition duration-300 " data-translate="about">About Me</a>
-            <a href="/pr0meth4us/projects" class="font-medium hover:text-gray-600 hover:underline transition duration-300 font-bold" data-translate="projects">Coding Projects</a>
-            <a href="/pr0meth4us/papers" class="font-medium hover:text-gray-600 hover:underline transition duration-300 " data-translate="papers">Papers</a>
-<!--            <a href="/pr0meth4us/misc" class="font-medium hover:text-gray-600 hover:underline transition duration-300 " data-translate="misc">Miscellaneous</a>-->
+        
+        
+        
+
+        <nav class="hidden md:flex space-x-8 py-4 font-medium">
+            <a href="/pr0meth4us/" class="text-gray-800 transition duration-300 relative py-1 px-2 " data-translate="home">
+                Home
+            </a>
+            <a href="/pr0meth4us/about" class="text-gray-800 transition duration-300 relative py-1 px-2 " data-translate="about">
+                About Me
+            </a>
+            <a href="/pr0meth4us/projects" class="text-gray-800 transition duration-300 relative py-1 px-2 font-bold text-blue-600" data-translate="projects">
+                Coding Projects
+            </a>
+            <a href="/pr0meth4us/papers" class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 " data-translate="papers">
+                Papers
+            </a>
+            <a href="/pr0meth4us/misc" class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 " data-translate="misc">
+                Others
+            </a>
         </nav>
 
         <div class="relative inline-block text-left" id="language-dropdown">
@@ -70,219 +82,213 @@
     </div>
 </header>
 
-<!-- Additional CSS to add to your stylesheets -->
-<style>
-    /* Make the mobile menu appear when checkbox is checked */
-    #menu-toggle:checked ~ #mobile-menu {
-        display: block;
-    }
-</style>
 
-<main class="p-8 max-w-6xl mx-auto">
-    <h1 class="text-3xl font-bold mb-8" data-translate="projects">Coding Projects</h1>
-
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
         
-        <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
-            
-            <div class="h-48 bg-gray-100 overflow-hidden">
-                <img src="https://rachana.gov.kh/assets/uncompressed_images/rachana.svg" alt="Rachana.gov.kh" class="w-full h-full object-cover object-center">
-            </div>
-            
-
-            <div class="p-6">
-                <h2 class="text-2xl font-bold mb-3">Rachana.gov.kh</h2>
-
-                <p class="mb-4 text-gray-700">Government design system to universalize the interface of digital public services.</p>
-
-                <div class="mb-4 flex flex-wrap gap-2">
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">React</span>
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">BootStrap</span>
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Jekyll</span>
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Content Writing</span>
-                    
-                </div>
-
-                <div class="flex flex-wrap gap-3">
-                    
-                    
-                    <span class="text-gray-400 cursor-not-allowed">Codebase unreleased</span>
-                    
-                    
-                    
-                    <a href="https://rachana.gov.kh/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
-                        Demo
-                    </a>
-                    
-                    
-                </div>
-            </div>
+        <div class="h-48 bg-gray-100 overflow-hidden">
+            <img src="https://rachana.gov.kh/assets/uncompressed_images/rachana.svg" alt="Rachana.gov.kh" class="w-full h-full object-cover object-center">
         </div>
         
-        <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
-            
-            <div class="h-48 bg-gray-100 overflow-hidden">
-                <img src="https://rachana.gov.kh/assets/uncompressed_images/rachana.svg" alt="Rachana Wordpress" class="w-full h-full object-cover object-center">
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">Rachana.gov.kh</h2>
+
+            <p class="mb-4 text-gray-700">Government design system to universalize the interface of digital public services.</p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">React</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">BootStrap</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Jekyll</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Content Writing</span>
+                
             </div>
-            
 
-            <div class="p-6">
-                <h2 class="text-2xl font-bold mb-3">Rachana Wordpress</h2>
-
-                <p class="mb-4 text-gray-700">Same purpose as Rachana but is based on WordPress.</p>
-
-                <div class="mb-4 flex flex-wrap gap-2">
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">WordPress</span>
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Node.js</span>
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">PHP</span>
-                    
-                </div>
-
-                <div class="flex flex-wrap gap-3">
-                    
-                    
-                    <a href="https://github.com/MPTCDITR/rachana-demo" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
-                        GitHub
-                    </a>
-                    
-                    
-                    
-                    <a href="https://wordpress.rachana.gov.kh/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
-                        Demo
-                    </a>
-                    
-                    
-                </div>
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://github.com/DGTDept/Rachana" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+                
+                <a href="https://rachana.gov.kh/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Demo
+                </a>
+                
+                
             </div>
         </div>
-        
-        <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
-            
-            <div class="h-48 bg-gray-100 overflow-hidden">
-                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741504449/3431C832-28C4-4E67-9E7B-95840E208C69_1_201_a_xbmgef.jpg" alt="AUPP eCampus" class="w-full h-full object-cover object-center">
-            </div>
-            
-
-            <div class="p-6">
-                <h2 class="text-2xl font-bold mb-3">AUPP eCampus</h2>
-
-                <p class="mb-4 text-gray-700">My final project. An eLearning portal designed to be cost efficient by utilizing the 'free trail' provisions from various providers.</p>
-
-                <div class="mb-4 flex flex-wrap gap-2">
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">React</span>
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Databases (Mongo, AWS, Cloudinary, Redis, Supabase)</span>
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Flask</span>
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">PayPal API</span>
-                    
-                </div>
-
-                <div class="flex flex-wrap gap-3">
-                    
-                    
-                    <a href="https://ecampusauppedu.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
-                        GitHub
-                    </a>
-                    
-                    
-                    
-                    <a href="https://ecampusauppedu.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
-                        Website
-                    </a>
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
-            
-            <div class="h-48 bg-gray-100 overflow-hidden">
-                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741504865/mnemosyne_y4vsar.png" alt="Mnemosyne" class="w-full h-full object-cover object-center">
-            </div>
-            
-
-            <div class="p-6">
-                <h2 class="text-2xl font-bold mb-3">Mnemosyne</h2>
-
-                <p class="mb-4 text-gray-700">Named after the goddess of memory. This app recreate TikTok conversation/chatlogs with a nice-looking interface (because TikTok automatically timebomb delete your texts). Processes are done on the client side, no server side process, no database.</p>
-
-                <div class="mb-4 flex flex-wrap gap-2">
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">NextJs</span>
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Tailwind</span>
-                    
-                </div>
-
-                <div class="flex flex-wrap gap-3">
-                    
-                    
-                    <a href="https://github.com/pr0meth4us/Mnemosyne" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
-                        GitHub
-                    </a>
-                    
-                    
-                    
-                    <a href="https://mnemosyne-hazel.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
-                        Website
-                    </a>
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
-            
-            <div class="h-48 bg-gray-100 flex items-center justify-center space-x-4">
-                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-20 w-auto">
-                <i class="fab fa-github text-gray-400 text-6xl"></i>
-            </div>
-            
-
-            <div class="p-6">
-                <h2 class="text-2xl font-bold mb-3">Customizable Form</h2>
-
-                <p class="mb-4 text-gray-700">This is a misnomer. It's actually a hard coded survey form. I made it because Google Form don't let me adjust the size of the picture options. Maybe future development is to make it really customizable.</p>
-
-                <div class="mb-4 flex flex-wrap gap-2">
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">NextJs</span>
-                    
-                    <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Mongo</span>
-                    
-                </div>
-
-                <div class="flex flex-wrap gap-3">
-                    
-                    
-                    <a href="https://github.com/pr0meth4us/customizable-form" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
-                        GitHub
-                    </a>
-                    
-                    
-                    
-                    <a href="https://content-design-research-spn.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
-                        Website
-                    </a>
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
     </div>
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+        
+        <div class="h-48 bg-gray-100 overflow-hidden">
+            <img src="https://rachana.gov.kh/assets/uncompressed_images/rachana.svg" alt="Rachana Wordpress" class="w-full h-full object-cover object-center">
+        </div>
+        
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">Rachana Wordpress</h2>
+
+            <p class="mb-4 text-gray-700">Same purpose as Rachana but is based on WordPress.</p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">WordPress</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Node.js</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">PHP</span>
+                
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://github.com/MPTCDITR/rachana-demo" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+                
+                <a href="https://wordpress.rachana.gov.kh/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Demo
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+        
+        <div class="h-48 bg-gray-100 overflow-hidden">
+            <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741504449/3431C832-28C4-4E67-9E7B-95840E208C69_1_201_a_xbmgef.jpg" alt="AUPP eCampus" class="w-full h-full object-cover object-center">
+        </div>
+        
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">AUPP eCampus</h2>
+
+            <p class="mb-4 text-gray-700">My final project. An eLearning portal designed to be cost efficient by utilizing the 'free trail' provisions from various providers.</p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">React</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Databases (Mongo, AWS, Cloudinary, Redis, Supabase)</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Flask</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">PayPal API</span>
+                
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://ecampusauppedu.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+                
+                <a href="https://ecampusauppedu.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Website
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+        
+        <div class="h-48 bg-gray-100 overflow-hidden">
+            <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741504865/mnemosyne_y4vsar.png" alt="Mnemosyne" class="w-full h-full object-cover object-center">
+        </div>
+        
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">Mnemosyne</h2>
+
+            <p class="mb-4 text-gray-700">Named after the goddess of memory. This app recreate TikTok conversation/chatlogs with a nice-looking interface (because TikTok automatically timebomb delete your texts). Processes are done on the client side, no server side process, no database.</p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">NextJs</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Tailwind</span>
+                
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://github.com/pr0meth4us/Mnemosyne" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+                
+                <a href="https://mnemosyne-hazel.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Website
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+        
+        <div class="h-48 bg-gray-100 flex items-center justify-center space-x-4">
+            <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-20 w-auto">
+            <i class="fab fa-github text-gray-400 text-6xl"></i>
+        </div>
+        
+
+        <div class="p-6">
+            <h2 class="text-2xl font-bold mb-3">Customizable Form</h2>
+
+            <p class="mb-4 text-gray-700">This is a misnomer. It's actually a hard coded survey form. I made it because Google Form don't let me adjust the size of the picture options. Maybe future development is to make it really customizable.</p>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">NextJs</span>
+                
+                <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 rounded text-sm">Mongo</span>
+                
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                
+                
+                <a href="https://github.com/pr0meth4us/customizable-form" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    GitHub
+                </a>
+                
+                
+                
+                <a href="https://content-design-research-spn.vercel.app/" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
+                    Website
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
+
 </main>
 
 <!-- Footer -->
@@ -294,13 +300,5 @@
 
 
 
-<script src="/pr0meth4us/assets/js/scripts.js"></script>
-<script src="/pr0meth4us/assets/js/translation.js"></script>
-<script>
-    window.env = {
-        BOT_TOKEN: '7800025628:AAF99ms_RJhsVO5pPqXN_NbsYEZ9ncxa0LY',
-        CHAT_ID: '1836585300'
-    };
-</script>
 </body>
 </html>

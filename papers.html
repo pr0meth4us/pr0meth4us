@@ -9,20 +9,20 @@
     <link rel="stylesheet" href="/pr0meth4us/assets/css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="/pr0meth4us/assets/js/scripts.js"></script>
+    <script src="/pr0meth4us/assets/js/translation.js" defer></script>
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
 
-<!-- Header with CSS-only mobile navigation -->
 <header class="shadow-sm bg-white py-4 px-6 border-b border-gray-300">
     <div class="container mx-auto flex justify-between items-center">
         <div>
             <a href="/pr0meth4us/" class="flex items-center space-x-3 text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
                 <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-12 w-auto">
-                <span>SOEUNG Phearaeron</span>
+                <span class="lg:block hidden">SOEUNG Phearaeron</span>
             </a>
         </div>
 
-        <!-- CSS-only mobile menu -->
         <div class="md:hidden">
             <input type="checkbox" id="menu-toggle" class="hidden">
             <label for="menu-toggle" class="p-2 cursor-pointer">
@@ -37,19 +37,31 @@
                     <a href="/pr0meth4us/about" class="block py-2 font-medium" data-translate="about">About Me</a>
                     <a href="/pr0meth4us/projects" class="block py-2 font-medium" data-translate="projects">Coding Projects</a>
                     <a href="/pr0meth4us/papers" class="block py-2 font-medium" data-translate="papers">Papers</a>
-<!--                    <a href="/pr0meth4us/misc" class="block py-2 font-medium" data-translate="misc">Miscellaneous</a>-->
+                    <a href="/pr0meth4us/misc" class="block py-2 font-medium" data-translate="misc">Others</a>
                 </div>
             </div>
         </div>
 
-        <!-- Desktop navigation -->
-        <nav class="hidden md:flex space-x-6">
-            
-            <a href="/pr0meth4us/" class="font-medium hover:text-gray-600 hover:underline transition duration-300 " data-translate="home">Home</a>
-            <a href="/pr0meth4us/about" class="font-medium hover:text-gray-600 hover:underline transition duration-300 " data-translate="about">About Me</a>
-            <a href="/pr0meth4us/projects" class="font-medium hover:text-gray-600 hover:underline transition duration-300 " data-translate="projects">Coding Projects</a>
-            <a href="/pr0meth4us/papers" class="font-medium hover:text-gray-600 hover:underline transition duration-300 font-bold" data-translate="papers">Papers</a>
-<!--            <a href="/pr0meth4us/misc" class="font-medium hover:text-gray-600 hover:underline transition duration-300 " data-translate="misc">Miscellaneous</a>-->
+        
+        
+        
+
+        <nav class="hidden md:flex space-x-8 py-4 font-medium">
+            <a href="/pr0meth4us/" class="text-gray-800 transition duration-300 relative py-1 px-2 " data-translate="home">
+                Home
+            </a>
+            <a href="/pr0meth4us/about" class="text-gray-800 transition duration-300 relative py-1 px-2 " data-translate="about">
+                About Me
+            </a>
+            <a href="/pr0meth4us/projects" class="text-gray-800 transition duration-300 relative py-1 px-2 " data-translate="projects">
+                Coding Projects
+            </a>
+            <a href="/pr0meth4us/papers" class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 font-bold text-blue-600" data-translate="papers">
+                Papers
+            </a>
+            <a href="/pr0meth4us/misc" class="text-gray-800 transition duration-300 relative py-1 px-2 hover:text-blue-600 " data-translate="misc">
+                Others
+            </a>
         </nav>
 
         <div class="relative inline-block text-left" id="language-dropdown">
@@ -70,76 +82,104 @@
     </div>
 </header>
 
-<!-- Additional CSS to add to your stylesheets -->
-<style>
-    /* Make the mobile menu appear when checkbox is checked */
-    #menu-toggle:checked ~ #mobile-menu {
-        display: block;
-    }
-</style>
 
-<main class="p-8 max-w-2xl mx-auto">
-    <h1 class="text-3xl font-bold mb-6">Academic Papers</h1>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+    <div class="space-y-6">
+    
+    <article class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+        <div class="flex flex-col md:flex-row h-full">
+            
+            <div class="md:w-1/3 lg:w-1/4 overflow-hidden">
+                <img
+                        src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741509629/SEA_and_Beyond_Analysis_and_Policy_Pathways_3__page-0001_elds0s.jpg"
+                        alt="Thumbnail for Why Cambodia should legalize surrogacy. In S. Po (Ed.), Southeast Asia and Beyond: Analysis & Policy Pathways (pp. 64-73). Center for Southeast Asian Studies, Royal University of Phnom Penh​"
+                        class="w-full h-full object-cover md:h-full"
+                        loading="lazy"
+                >
+            </div>
+            
 
-    <div class="space-y-8">
-        
-        <div class="p-6 bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-            <div class="flex flex-col">
-                
-                <div class="flex mb-4">
-                    <div class="w-1/4 flex-shrink-0 mr-4">
-                        <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741509629/SEA_and_Beyond_Analysis_and_Policy_Pathways_3__page-0001_elds0s.jpg" alt="Thumbnail for Why Cambodia should legalize surrogacy. In S. Po (Ed.), Southeast Asia and Beyond: Analysis & Policy Pathways (pp. 64-73). Center for Southeast Asian Studies, Royal University of Phnom Penh​" class="w-full h-auto rounded">
-                    </div>
-                    <div class="w-3/4">
-                        <h2 class="text-2xl font-bold mb-2">Why Cambodia should legalize surrogacy. In S. Po (Ed.), Southeast Asia and Beyond: Analysis & Policy Pathways (pp. 64-73). Center for Southeast Asian Studies, Royal University of Phnom Penh​</h2>
-                    </div>
+            <div class="md:w-2/3 lg:w-3/4 p-6 flex flex-col">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                    Why Cambodia should legalize surrogacy. In S. Po (Ed.), Southeast Asia and Beyond: Analysis & Policy Pathways (pp. 64-73). Center for Southeast Asian Studies, Royal University of Phnom Penh​
+                </h2>
+
+                <div class="prose prose-sm max-w-none text-gray-700 mb-4 flex-grow">
+                    The ethical, legal, and heath concerns around the ambiguous ban on surrogacy in Cambodia. This paper argues that Cambodia should revoke the ban and create a legal framework for surrogacy services.
                 </div>
-                
 
-                <p class="mb-4 text-gray-700 w-full">The ethical, legal, and heath concerns around the ambiguous ban on surrogacy in Cambodia. This paper argues that Cambodia should revoke the ban and create a legal framework for surrogacy services.</p>
-
-                <a href="https://rupp.edu.kh/iispp/cseas/CSEAS_Book/2024/documents/SEA%20and%20Beyond%20Analysis%20and%20Policy%20Pathways%20(3).pdf" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
-                    Read More
-                </a>
-            </div>
-        </div>
-        
-        <div class="p-6 bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-            <div class="flex flex-col">
-                
-                <div class="flex mb-4">
-                    <div class="w-1/4 flex-shrink-0 mr-4">
-                        <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741509629/Cambodian_Youth_s_Perspectives_on_International_Affairs_2_page-0001_owa11m.jpg" alt="Thumbnail for  Singapore’s Fourth Prime Minister: Navigating Challenges Under Lawrence Wong's Leadership. In S. Po (Ed.), Cambodian Youth's Perspectives on International Affairs (pp. 63-66). Royal University of Phnom Penh​" class="w-full h-auto rounded">
-                    </div>
-                    <div class="w-3/4">
-                        <h2 class="text-2xl font-bold mb-2"> Singapore’s Fourth Prime Minister: Navigating Challenges Under Lawrence Wong's Leadership. In S. Po (Ed.), Cambodian Youth's Perspectives on International Affairs (pp. 63-66). Royal University of Phnom Penh​</h2>
-                    </div>
+                <div class="mt-auto">
+                    <a href="https://rupp.edu.kh/iispp/cseas/CSEAS_Book/2024/documents/SEA%20and%20Beyond%20Analysis%20and%20Policy%20Pathways%20(3).pdf" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200" target="_blank">
+                        <span>Read Paper</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
                 </div>
-                
-
-                <p class="mb-4 text-gray-700 w-full">Singapore's PM change in 2024 was huge. For one, the timing was tough as the country in the middle of an unpredictable regional and international dynamics. Two, though this change had been pre-announced for months in advance, Singapore rarely changes its PM—during its lifetime, it has only had three and Singaporeans are seen to be allergic to political changes. This paper discusses the reasons behind this transition and what will happen with Wong.</p>
-
-                <a href="https://rupp.edu.kh/iispp/cseas/CSEAS_Book/2024/documents/Cambodian_Youth's_Perspectives_on_International_Affairs_2.pdf" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
-                    Read More
-                </a>
             </div>
         </div>
-        
-        <div class="p-6 bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-            <div class="flex flex-col">
-                
-                <h2 class="text-2xl font-bold mb-2">Malaysia APSC Position Paper</h2>
-                
+    </article>
+    
+    <article class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+        <div class="flex flex-col md:flex-row h-full">
+            
+            <div class="md:w-1/3 lg:w-1/4 overflow-hidden">
+                <img
+                        src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741509629/Cambodian_Youth_s_Perspectives_on_International_Affairs_2_page-0001_owa11m.jpg"
+                        alt="Thumbnail for  Singapore’s Fourth Prime Minister: Navigating Challenges Under Lawrence Wong's Leadership. In S. Po (Ed.), Cambodian Youth's Perspectives on International Affairs (pp. 63-66). Royal University of Phnom Penh​"
+                        class="w-full h-full object-cover md:h-full"
+                        loading="lazy"
+                >
+            </div>
+            
 
-                <p class="mb-4 text-gray-700 w-full">This is not a publication, but I’m including it here because it won me the Best PP award for 'thorough and accurate representation' with 'well-researched analysis and practical recommendations' in an ASEAN simulation where I also served as the chair (Malaysia 2025).</p>
+            <div class="md:w-2/3 lg:w-3/4 p-6 flex flex-col">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                     Singapore’s Fourth Prime Minister: Navigating Challenges Under Lawrence Wong's Leadership. In S. Po (Ed.), Cambodian Youth's Perspectives on International Affairs (pp. 63-66). Royal University of Phnom Penh​
+                </h2>
 
-                <a href="https://aupp-my.sharepoint.com/:b:/g/personal/2022296soeung_aupp_edu_kh/EZRp0-fSGZZEnjMjgWKK8YQBpo44cpOg8P72OBDetyMfwg?e=NjJu1W" class="text-blue-600 hover:text-blue-800 hover:underline" target="_blank">
-                    Read More
-                </a>
+                <div class="prose prose-sm max-w-none text-gray-700 mb-4 flex-grow">
+                    Singapore's PM change in 2024 was huge. For one, the timing was tough as the country in the middle of an unpredictable regional and international dynamics. Two, though this change had been pre-announced for months in advance, Singapore rarely changes its PM—during its lifetime, it has only had three and Singaporeans are seen to be allergic to political changes. This paper discusses the reasons behind this transition and what will happen with Wong.
+                </div>
+
+                <div class="mt-auto">
+                    <a href="https://rupp.edu.kh/iispp/cseas/CSEAS_Book/2024/documents/Cambodian_Youth's_Perspectives_on_International_Affairs_2.pdf" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200" target="_blank">
+                        <span>Read Paper</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
-        
-    </div>
+    </article>
+    
+    <article class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+        <div class="flex flex-col md:flex-row h-full">
+            
+
+            <div class=" p-6 flex flex-col">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                    Malaysia APSC Position Paper
+                </h2>
+
+                <div class="prose prose-sm max-w-none text-gray-700 mb-4 flex-grow">
+                    This is not a publication, but I’m including it here because it won me the Best PP award for 'thorough and accurate representation' with 'well-researched analysis and practical recommendations' in an ASEAN simulation where I also served as the chair (Malaysia 2025).
+                </div>
+
+                <div class="mt-auto">
+                    <a href="https://aupp-my.sharepoint.com/:b:/g/personal/2022296soeung_aupp_edu_kh/EZRp0-fSGZZEnjMjgWKK8YQBpo44cpOg8P72OBDetyMfwg?e=NjJu1W" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200" target="_blank">
+                        <span>Read Paper</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+</div>
 </main>
 
 <!-- Footer -->
@@ -151,13 +191,5 @@
 
 
 
-<script src="/pr0meth4us/assets/js/scripts.js"></script>
-<script src="/pr0meth4us/assets/js/translation.js"></script>
-<script>
-    window.env = {
-        BOT_TOKEN: '7800025628:AAF99ms_RJhsVO5pPqXN_NbsYEZ9ncxa0LY',
-        CHAT_ID: '1836585300'
-    };
-</script>
 </body>
 </html>

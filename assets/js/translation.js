@@ -3,32 +3,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const languageOptions = document.getElementById('language-options');
     const currentLanguageText = document.getElementById('current-language');
     const languageLinks = document.querySelectorAll('[data-lang]');
-
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
     const translatableElements = document.querySelectorAll('[data-translate]');
 
     let translations = {};
 
-    dropdownButton.addEventListener('click', function() {
-        const isOpen = languageOptions.classList.contains('hidden');
-        if (isOpen) {
-            languageOptions.classList.remove('hidden');
-        } else {
-            languageOptions.classList.add('hidden');
-        }
-    });
+    // Ensure dropdown button exists before adding event listener
+    if (dropdownButton && languageOptions) {
+        dropdownButton.addEventListener('click', function () {
+            languageOptions.classList.toggle('hidden');
+        });
 
-    document.addEventListener('click', function(event) {
-        if (!dropdownButton.contains(event.target) && !languageOptions.contains(event.target)) {
-            languageOptions.classList.add('hidden');
-        }
-    });
+        document.addEventListener('click', function (event) {
+            if (!dropdownButton.contains(event.target) && !languageOptions.contains(event.target)) {
+                languageOptions.classList.add('hidden');
+            }
+        });
+    }
 
-    /**
-     * Fetches translations from the JSON file
-     */
     async function fetchTranslations() {
         try {
             const response = await fetch('/pr0meth4us/assets/translations.json');
@@ -62,11 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateLanguageDisplay(lang) {
-        currentLanguageText.textContent = lang.toUpperCase();
+        if (currentLanguageText) {
+            currentLanguageText.textContent = lang.toUpperCase();
+        }
     }
 
     languageLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const selectedLang = this.getAttribute('data-lang');
             updateLanguage(selectedLang);
@@ -74,10 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             languageOptions.classList.add('hidden');
         });
-    });
-
-    mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
     });
 
     fetchTranslations();
