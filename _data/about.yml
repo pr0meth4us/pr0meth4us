@@ -20,7 +20,4 @@ languages:
 birth_year: "2004"
 birthplace: "Kompong Thom"
 current_location: "Phnom Penh"
-personality_type: ISTP
-
-cv_link: "/cv"
-cv_text: "View my complete CV"
+personality_type: "ISTP"
