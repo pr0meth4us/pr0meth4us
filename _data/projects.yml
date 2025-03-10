@@ -27,7 +27,7 @@
     - name: Demo
       url: "https://wordpress.rachana.gov.kh/"
       active: true
-  thumbnail: "https://rachana.gov.kh/assets/uncompressed_images/rachana.svg"
+  thumbnail: "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741625241/Untitled_design_1_zgzqng.jpg"
 
 
 - title: "AUPP eCampus"
@@ -72,3 +72,18 @@
     - name: Website
       url: "https://content-design-research-spn.vercel.app/"
       active: true
+
+- title: "Hestia"
+  description: "Named after another Greek goddess. The function is to generate random grouping when given a list. But it also offers users to create account and save the lists for later randomization. This project is a once-in-a-lifetime experience (for I'll never code in Java again)"
+  tech:
+    - SpringBoot
+    - NextJs
+    - Mongo
+  links:
+    - name: GitHub
+      url: "https://github.com/pr0meth4us/hestia"
+      active: true
+    - name: Website currently down
+      url: "https://content-design-research-spn.vercel.app/"
+      active: false
+  thumbnail: "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741625575/DALL_E_2024-10-27_00.51.40_-_A_modern_black_and_white_logo_design_for_the_brand__Hestia___inspired_by_the_Greek_goddess_of_hearth_and_home._The_logo_features_a_minimalist__stylize_1-removebg-preview_h39xa4.png"

@@ -19,11 +19,11 @@ title: Academic Papers
             {% endif %}
 
             <div class="{% if paper.thumbnail %}md:w-2/3 lg:w-3/4{% endif %} p-6 flex flex-col">
-                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                <h3 class="text-justify md:text-xl font-bold text-gray-900 mb-4 leading-tight">
                     {{ paper.title }}
-                </h2>
+                </h3>
 
-                <div class="prose prose-sm max-w-none text-gray-700 mb-4 flex-grow">
+                <div class="text-justify prose prose-sm max-w-none text-gray-700 mb-4 flex-grow">
                     {{ paper.abstract }}
                 </div>
 

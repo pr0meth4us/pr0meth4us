@@ -2,7 +2,7 @@
 layout: about
 title: About Me
 translate_key: about
-profile_image: https://res.cloudinary.com/dktzt7yn1/image/upload/v1741373385/4A433223-994E-41B6-B4F7-50EB26DF0C28_cvbtmp.jpg
+profile_image: https://res.cloudinary.com/dktzt7yn1/image/upload/v1741625847/IMG_9124__1_-removebg-preview_pihcgg.png
 ---
 
 **Neron**

@@ -16,7 +16,6 @@ title: Others
   </div>
 </div>
 
-<!-- Pinterest-style masonry grid with improved styling -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 auto-rows-auto">
   {% if item.date %}
   <span class="text-sm text-gray-500 whitespace-nowrap flex items-center">
@@ -29,7 +28,6 @@ title: Others
   {% for item in site.data.misc %}
   <article class="bg-white border rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full transform hover:-translate-y-1">
     {% if item.images %}
-    <!-- Multiple images gallery -->
     <div class="relative w-full">
       <div class="aspect-w-4 aspect-h-3 overflow-hidden">
         <!-- Main image -->
