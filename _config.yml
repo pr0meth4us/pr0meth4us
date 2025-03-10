@@ -40,6 +40,7 @@ contact_info:
     text: "linkedin.com/in/nernnnnnnn/"
     url: "https://linkedin.com/in/nernnnnnnn/"
   - type: "telegram"
+    text: "https://t.me/nernnnnnnn"
     url: "https://t.me/nernnnnnnn"
 
 markdown: kramdown

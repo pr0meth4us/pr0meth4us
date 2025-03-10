@@ -6,9 +6,9 @@ permalink: /cv/
 
 <div class="space-y-10">
     <div class="text-center">
-        <h1 class="text-4xl font-bold mb-2">{{ site.data.cv.name }}</h1>
+        <h1 class="text-4xl font-bold mb-2">{{ site.title }}</h1>
         <div class="flex justify-center space-x-4 flex-wrap">
-            {% for contact in site.data.cv.contact_info %}
+            {% for contact in site.contact_info %}
             <a href="{{ contact.url }}" {% if contact.external %}target="_blank"{% endif %} class="text-blue-600 hover:underline">{{ contact.text }}</a>
             {% endfor %}
         </div>

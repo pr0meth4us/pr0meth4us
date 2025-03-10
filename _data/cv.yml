@@ -1,17 +1,4 @@
 name: "SOEUNG Phearaneron"
-contact_info:
-  - text: "phearaneron.soeung@gmail.com"
-    url: "mailto:phearaneron.soeung@gmail.com"
-    external: false
-  - text: "+855 962021314"
-    url: "tel:+855962021314"
-    external: false
-  - text: "linkedin.com/in/nernnnnnnn/"
-    url: "https://linkedin.com/in/nernnnnnnn/"
-    external: true
-  - text: "github.com/pr0meth4us"
-    url: "https://github.com/pr0meth4us"
-    external: true
 
 objective: "Determined to pursue a career as a policy researcher focusing on digital governance, combining expertise in Information Technology and International Relations. Leveraging hands-on experience from CSEAS and Digital Government Committee, along with technical skills in programming, to develop evidence-based policy solutions for Cambodia's digital future."
 
@@ -26,7 +13,6 @@ education:
     period: "2021 - JULY 2025"
     degree: "Bachelor of Arts in International Relations"
 
-# Experience
 experience:
   - organization: "Transparency International"
     period: "Jan 2025 - March 2025"
@@ -59,7 +45,6 @@ experience:
       - "Developed a WordPress theme (React, Bootstrap, CI/CD)."
       - "Gained experience in technical documentation, diplomacy, and liaising."
 
-# Skills
 skills:
   - category: "Technical Skills"
     items:
@@ -72,5 +57,4 @@ skills:
       - "Research & Policy Development"
       - "<span class=\"font-medium\">Certifications:</span> AWS Cloud Data Pipeline Builder, AWS Cloud Architecting, Cisco Networking Essentials"
 
-# PDF URL
 pdf_url: "https://docs.google.com/presentation/d/1NRitWO8yetD6M1swKvSy2vQ-Z0PiS5AVrqFESCYNUTA/export/pdf"
