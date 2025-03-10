@@ -1,25 +1,42 @@
-<!-- Header -->
+<!-- Header with CSS-only mobile navigation -->
 <header class="shadow-sm bg-white py-4 px-6 border-b border-gray-300">
     <div class="container mx-auto flex justify-between items-center">
         <div>
-            <a href="{{ '/' | relative_url }}" class="text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
-                {{ site.title }}
+            <a href="{{ '/' | relative_url }}" class="flex items-center space-x-3 text-2xl font-bold tracking-tight transition duration-300 hover:text-gray-700">
+                <img src="https://res.cloudinary.com/dktzt7yn1/image/upload/v1741585138/prometheus_cju1pn.png" alt="Prometheus Logo" class="h-12 w-auto">
+                <span>{{ site.title }}</span>
             </a>
         </div>
 
+        <!-- CSS-only mobile menu -->
+        <div class="md:hidden">
+            <input type="checkbox" id="menu-toggle" class="hidden">
+            <label for="menu-toggle" class="p-2 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </label>
+
+            <div class="absolute left-0 right-0 top-[calc(4rem-1px)] bg-white border-b border-gray-300 hidden peer-checked:block" id="mobile-menu">
+                <div class="container mx-auto px-4 py-3 space-y-2">
+                    <a href="{{ '/' | relative_url }}" class="block py-2 font-medium" data-translate="home">Home</a>
+                    <a href="{{ '/about' | relative_url }}" class="block py-2 font-medium" data-translate="about">About Me</a>
+                    <a href="{{ '/projects' | relative_url }}" class="block py-2 font-medium" data-translate="projects">Coding Projects</a>
+                    <a href="{{ '/papers' | relative_url }}" class="block py-2 font-medium" data-translate="papers">Papers</a>
+<!--                    <a href="{{ '/misc' | relative_url }}" class="block py-2 font-medium" data-translate="misc">Miscellaneous</a>-->
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop navigation -->
         <nav class="hidden md:flex space-x-6">
             {% assign current_page = page.url | split: '/' | last %}
             <a href="{{ '/' | relative_url }}" class="font-medium hover:text-gray-600 hover:underline transition duration-300 {% if current_page == '' %}font-bold{% endif %}" data-translate="home">Home</a>
             <a href="{{ '/about' | relative_url }}" class="font-medium hover:text-gray-600 hover:underline transition duration-300 {% if current_page == 'about.html' %}font-bold{% endif %}" data-translate="about">About Me</a>
             <a href="{{ '/projects' | relative_url }}" class="font-medium hover:text-gray-600 hover:underline transition duration-300 {% if current_page == 'projects.html' %}font-bold{% endif %}" data-translate="projects">Coding Projects</a>
             <a href="{{ '/papers' | relative_url }}" class="font-medium hover:text-gray-600 hover:underline transition duration-300 {% if current_page == 'papers.html' %}font-bold{% endif %}" data-translate="papers">Papers</a>
+<!--            <a href="{{ '/misc' | relative_url }}" class="font-medium hover:text-gray-600 hover:underline transition duration-300 {% if current_page == 'misc.html' %}font-bold{% endif %}" data-translate="misc">Miscellaneous</a>-->
         </nav>
-
-        <button class="md:hidden p-2" id="mobile-menu-button">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
 
         <div class="relative inline-block text-left" id="language-dropdown">
             <button type="button" id="language-menu-button" class="inline-flex justify-between items-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false" aria-haspopup="true">
@@ -39,12 +56,10 @@
     </div>
 </header>
 
-<!-- Mobile Menu (hidden by default) -->
-<nav class="md:hidden bg-white border-b border-gray-300 hidden" id="mobile-menu">
-    <div class="container mx-auto px-4 py-3 space-y-2">
-        <a href="{{ '/' | relative_url }}" class="block py-2 font-medium" data-translate="home">Home</a>
-        <a href="{{ '/about' | relative_url }}" class="block py-2 font-medium" data-translate="about">About Me</a>
-        <a href="{{ '/projects' | relative_url }}" class="block py-2 font-medium" data-translate="projects">Coding Projects</a>
-        <a href="{{ '/papers' | relative_url }}" class="block py-2 font-medium" data-translate="papers">Papers</a>
-    </div>
-</nav>
+<!-- Additional CSS to add to your stylesheets -->
+<style>
+    /* Make the mobile menu appear when checkbox is checked */
+    #menu-toggle:checked ~ #mobile-menu {
+        display: block;
+    }
+</style>

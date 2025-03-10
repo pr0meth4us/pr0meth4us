@@ -1,0 +1,55 @@
+- title: "Japanese Garden Design Exploration"
+  description: "A photographic journey exploring traditional Japanese garden elements and their modern interpretations. Features images from various gardens."
+  images:
+    - "https://picsum.photos/200/300"
+    - "https://source.unsplash.com/200x300/?nature"
+    - "https://images.pexels.com/photos/285495/pexels-photo-285495.jpeg"
+    - "https://www.wallpapertip.com/wm/15602-nature-landscape-wallpaper.jpg"
+    - "https://i.imgur.com/7uo0XAb.jpg"
+  tags: ["photography", "japanese-design", "gardens", "architecture"]
+  link: "/misc/japanese-gardens"
+
+- title: "Urban Sketching Collection"
+  description: "A series of quick sketches capturing urban life and architecture in various cities. These drawings were created on-location using pen and watercolor."
+  images:
+    - "https://source.unsplash.com/200x300/?cats"
+    - "https://i.redd.it/bq3vzj7f3fj11.jpg"
+    - "https://www.pexels.com/photo/close-up-of-an-orange-flower-21400/"
+  tags: ["art", "sketching", "urban", "travel"]
+  link: "/misc/urban-sketches"
+
+- title: "Interactive Data Visualization on Climate Change"
+  description: "An interactive visualization exploring global temperature changes over the past century, with focus on regional impacts and potential future scenarios."
+  thumbnail: "https://source.unsplash.com/200x300/?space"
+  tags: ["data-viz", "climate", "interactive"]
+  link: "/misc/climate-visualization"
+
+- title: "Book Review Collection: Science & Technology"
+  description: "Detailed reviews of recent science and technology books, including insights on data science, AI ethics, and the future of technology."
+  images:
+    - "https://i.imgur.com/VeTfC3G.jpg"
+    - "https://images.unsplash.com/photo-1523266386226-bf6c7e8e89b4"
+  tags: ["reviews", "books", "science", "technology"]
+  link: "/misc/book-reviews"
+
+- title: "Personal Notes on Machine Learning Ethics"
+  description: "A collection of personal notes and reflections on ethical considerations in machine learning systems, focusing on bias, transparency, and accountability."
+  thumbnail: "https://www.pexels.com/photo/flower-bloom-blooming-plant-3371/"
+  tags: ["ethics", "machine-learning", "notes"]
+  link: "/misc/ml-ethics-notes"
+
+- title: "Handcrafted Furniture Design Concepts"
+  description: "A showcase of furniture design sketches and prototypes exploring the intersection of traditional woodworking techniques and modern aesthetics."
+  images:
+    - "https://source.unsplash.com/200x300/?ocean"
+    - "https://i.imgur.com/5Z6r4yD.jpg"
+    - "https://images.pexels.com/photos/342885/pexels-photo-342885.jpeg"
+    - "https://www.wallpapertip.com/wm/12701-animal-puppy-wallpaper.jpg"
+  tags: ["design", "furniture", "woodworking", "crafts"]
+  link: "/misc/furniture-designs"
+
+- title: "Educational Workshop Materials: Programming Fundamentals"
+  description: "Materials from workshops teaching programming fundamentals. Includes curriculum outlines, exercise sheets, and visual learning aids."
+  thumbnail: "https://source.unsplash.com/200x300/?mountains"
+  tags: ["education", "programming", "workshop"]
+  link: "/misc/programming-workshops"

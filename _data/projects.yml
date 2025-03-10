@@ -60,3 +60,15 @@
       active: true
   thumbnail: "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741504865/mnemosyne_y4vsar.png"
 
+- title: "Customizable Form"
+  description: "This is a misnomer. It's actually a hard coded survey form. I made it because Google Form don't let me adjust the size of the picture options. Maybe future development is to make it really customizable."
+  tech:
+    - NextJs
+    - Mongo
+  links:
+    - name: GitHub
+      url: "https://github.com/pr0meth4us/customizable-form"
+      active: true
+    - name: Website
+      url: "https://content-design-research-spn.vercel.app/"
+      active: true
