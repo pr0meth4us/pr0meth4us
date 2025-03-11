@@ -58,9 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             welcomeModal.classList.add('hidden');
         });
     }
-});
 
-document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
