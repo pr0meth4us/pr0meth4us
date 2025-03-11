@@ -8,23 +8,18 @@ url: "https://pr0meth4us.github.io"
 navigation:
   - text: "Home"
     url: "/"
-    translate_key: "home"
     primary: true
   - text: "About Me"
     url: "/about"
-    translate_key: "about"
     primary: false
   - text: "Coding Projects"
     url: "/projects"
-    translate_key: "projects"
     primary: false
   - text: "Papers"
     url: "/papers"
-    translate_key: "papers"
     primary: false
   - text: "Others"
     url: "/misc"
-    translate_key: "misc"
     primary: false
 
 contact_info:
