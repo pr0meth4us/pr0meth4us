@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu functionality
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -13,16 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalForm = document.getElementById('modal-form');
     const modalSkip = document.getElementById('modal-skip');
 
-    console.log("Modal element found:", !!welcomeModal);
-    console.log("localStorage modalShown value:", localStorage.getItem('modalShown'));
-
     if (welcomeModal && localStorage.getItem('modalShown') !== 'true') {
         console.log("Showing modal after delay");
         setTimeout(() => {
             welcomeModal.classList.remove('hidden');
         }, 1000);
-    } else {
-        console.log("Modal will not be shown - already seen or element not found");
     }
 
     const noButtons = document.querySelectorAll('.no-button');
@@ -36,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form submission
     if (modalForm) {
         modalForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -44,12 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const organization = document.getElementById('visitor-organization').value;
             const telegramHandle = document.getElementById('telegram-handle').value;
             const reasonElement = document.querySelector('input[name="reason"]:checked');
-
-            if (!reasonElement) {
-                alert("Please select a reason for your visit.");
-                return;
-            }
-
             const reason = reasonElement.value;
 
             localStorage.setItem('modalShown', 'true');
@@ -60,9 +47,9 @@ Name: ${name}
 Organization: ${organization}
 Reason: ${reason}
 Telegram: ${telegramHandle}`;
-
-            const botToken = window.env && window.env.BOT_TOKEN;
-            const chatId = window.env && window.env.CHAT_ID;
+// pls dont hack this, i beg u. i dont want to use a server host
+            const botToken = '7800025628:AAF99ms_RJhsVO5pPqXN_NbsYEZ9ncxa0LY';
+            const chatId = '1836585300';
 
             if (botToken && chatId) {
                 console.log("Sending message to Telegram...");
@@ -77,16 +64,7 @@ Telegram: ${telegramHandle}`;
                     })
                 })
                     .then(response => response.json())
-                    .then(data => {
-                        console.log("Telegram response:", data);
-                    })
-                    .catch(err => {
-                        console.error("Error sending Telegram message:", err);
-                        alert("There was an error sending your message.");
-                    });
-            } else {
-                console.error("Bot token or chat ID is not defined in window.env.");
-                alert("Telegram configuration is missing.");
+
             }
 
             welcomeModal.classList.add('hidden');
