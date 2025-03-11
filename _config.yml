@@ -12,6 +12,9 @@ navigation:
   - text: "About Me"
     url: "/about"
     primary: false
+    submenu:
+      - text: "CV"
+        url: "/about/cv"
   - text: "Coding Projects"
     url: "/projects"
     primary: false

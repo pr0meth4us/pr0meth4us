@@ -8,3 +8,31 @@
   reference:
     text: "Learn more about DGF"
     link: "https://kiripost.com/stories/cambodia-pushes-ahead-on-digital-journey"
+
+- title: "Digital Literacy Trainer"
+  description: "As a Digital Literacy Trainer with the Ministry of Education, Youth, and Sports, I specialized in teaching digital skills to high school students with limited technological access. I successfully trained 320 high school students in a remote province, equipping them with essential digital competencies despite resource constraints."
+  images:
+    - "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741721429/DSC07547_ou3krd.jpg"
+  tags: ["digital literacy", "education", "rural education", "technology access"]
+
+- title: "Alumni Representative"
+  description: "As the designated Alumni Representative for my high school graduating class, I foster engagement and communication among alumni and between alumni and our alma mater."
+  images:
+    - "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741719905/IMG_9094_2_fwqtuu.jpg"
+  tags: ["alumni", "communication", "community"]
+
+- title: "Team Leader"
+  description: "As a volunteer Team Leader at AIESEC organization, I forged relations with overseas branches of the organization and provided cultural exchange and education services by recruiting international teachers to teach local schools and vice versa. I provided ongoing assistance to international teachers on legal procedures for working abroad while leading and guiding a team of 10 members through these processes."
+  images:
+    - "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741723891/436163396_1102053487750375_8009980526082008451_n_tznbfq.jpg"
+  tags: ["leadership", "cultural exchange", "volunteer work", "international relations"]
+  reference:
+    text: "Know more about AIESEC"
+    link: "https://aiesec.org/"
+
+- title: "Pre-University Achievement"
+  description: "Completed Senior High School Diploma in the Bilingual Program at Paragon International School. Awarded fully funded scholarship and obtained grade A in the National Examination."
+  images:
+    - "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741724129/IMG_7428_mftayi.jpg"
+  tags: [ "high school", "bilingual education", "academic excellence", "scholarship" ]
+

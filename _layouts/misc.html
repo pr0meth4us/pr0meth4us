@@ -17,20 +17,12 @@ title: Archive
 </div>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 auto-rows-auto">
-  {% if item.date %}
-  <span class="text-sm text-gray-500 whitespace-nowrap flex items-center">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-  </svg>
-  {{ item.date | date: "%b %Y" }}
-</span>
-  {% endif %}
   {% for item in site.data.misc %}
   <article class="bg-white border rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full transform hover:-translate-y-1">
     {% if item.images %}
     <div class="relative w-full">
-      <div class="aspect-w-4 aspect-h-3 overflow-hidden">
-        <!-- Main image -->
+      <!-- Fixed height container for main image -->
+      <div class="h-60 w-full overflow-hidden">
         <img
                 src="{{ item.images[0] }}"
                 alt="Main image for {{ item.title }}"
@@ -40,10 +32,10 @@ title: Archive
       </div>
 
       {% if item.images.size > 1 %}
-      <!-- Image collage for additional images -->
+      <!-- Image collage for additional images - fixed exact sizes -->
       <div class="absolute bottom-3 right-3 flex gap-2">
         {% for image in item.images offset:1 limit:3 %}
-        <div class="w-14 h-14 md:w-16 md:h-16 rounded-md overflow-hidden border-2 border-white shadow-md">
+        <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-white shadow-md">
           <img
                   src="{{ image }}"
                   alt="Additional image for {{ item.title }}"
@@ -54,7 +46,7 @@ title: Archive
         {% endfor %}
 
         {% if item.images.size > 4 %}
-        <div class="w-14 h-14 md:w-16 md:h-16 rounded-md overflow-hidden border-2 border-white shadow-md bg-black bg-opacity-70 flex items-center justify-center">
+        <div class="w-12 h-12 rounded-md overflow-hidden border-2 border-white shadow-md bg-black bg-opacity-70 flex items-center justify-center">
           <span class="text-white font-bold">+{{ item.images.size | minus: 4 }}</span>
         </div>
         {% endif %}
@@ -62,9 +54,9 @@ title: Archive
       {% endif %}
     </div>
     {% elsif item.thumbnail %}
-    <!-- Single image -->
+    <!-- Single image with fixed height -->
     <div class="w-full">
-      <div class="aspect-w-4 aspect-h-3 overflow-hidden">
+      <div class="h-48 w-full overflow-hidden">
         <img
                 src="{{ item.thumbnail }}"
                 alt="Thumbnail for {{ item.title }}"

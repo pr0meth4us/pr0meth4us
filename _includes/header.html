@@ -7,59 +7,92 @@
             </a>
         </div>
 
+        {% for item in site.navigation %}
+        {% assign item_url = item.url | remove: ".html" %}
+        {% assign page_url = page.url | remove: ".html" | remove: site.baseurl %}
+
+        {% comment %} Extract just the first section of the page URL {% endcomment %}
+        {% assign url_parts = page_url | split: "/" %}
+        {% assign first_section = "" %}
+        {% if url_parts.size > 1 and url_parts[1] != "" %}
+        {% assign first_section = "/" | append: url_parts[1] | append: "/" %}
+        {% else %}
+        {% assign first_section = "/" %}
+        {% endif %}
+
+        {% comment %} Extract just the first section of the item URL {% endcomment %}
+        {% assign item_url_parts = item_url | split: "/" %}
+        {% assign item_first_section = "" %}
+        {% if item_url_parts.size > 1 and item_url_parts[1] != "" %}
+        {% assign item_first_section = "/" | append: item_url_parts[1] | append: "/" %}
+        {% else %}
+        {% assign item_first_section = "/" %}
+        {% endif %}
+
+        {% assign is_active = false %}
+        {% if first_section == item_first_section and item_first_section != "/" %}
+        {% assign is_active = true %}
+        {% elsif item_url == "/" and page_url == "/" %}
+        {% assign is_active = true %}
+        {% endif %}
+
+        {% capture nav_item %}
+        <div class="{% if item.submenu %}dropdown-container{% endif %} nav-item">
+            <a href="{{ item.url | relative_url }}"
+               class="{% if is_active %}text-blue-600 active-nav{% else %}text-gray-800 hover:text-blue-600{% endif %} transition nav-link"
+            >
+                {{ item.text }}
+                {% if item.submenu %}
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1 transform transition-transform duration-200 dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+                {% endif %}
+            </a>
+
+            {% if item.submenu %}
+            <div class="dropdown-content">
+                {% for subitem in item.submenu %}
+                {% assign subitem_url = subitem.url | remove: ".html" %}
+                {% assign subitem_is_active = page_url == subitem_url %}
+                <a href="{{ subitem.url | relative_url }}"
+                   class="dropdown-item {% if subitem_is_active %}text-blue-600{% else %}text-gray-700 hover:text-blue-600{% endif %} transition"
+                >
+                    {{ subitem.text }}
+                </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        {% endcapture %}
+
+        {% assign navigation_items = navigation_items | default: "" | append: nav_item | append: "||SPLIT||" %}
+        {% endfor %}
+
+        {% assign nav_array = navigation_items | split: "||SPLIT||" %}
+
         <div class="md:hidden relative">
-            <input type="checkbox" id="menu-toggle" class="peer hidden">
-            <label for="menu-toggle" class="p-2 cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button id="mobile-menu-button" class="p-2 rounded-md hover:bg-gray-100 transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-            </label>
+            </button>
 
-            <div class="absolute top-16 left-0 w-full bg-white border-b border-gray-300 hidden peer-checked:flex flex-col shadow-md z-50" id="mobile-menu">
-                <div class="container mx-auto px-4 py-3 space-y-2">
-                    {% for item in site.navigation %}
-                    {% assign item_url = item.url | remove: ".html" %}
-                    {% assign page_url = page.url | remove: ".html" | remove: site.baseurl %}
-                    <a href="{{ item.url | relative_url }}"
-                       class="block py-2 font-medium {% if page_url == item_url %}text-blue-600 font-bold{% else %}text-gray-800 hover:text-blue-600{% endif %} transition"
-                    >
-                        {{ item.text }}
-                    </a>
+            <!-- Mobile Menu -->
+            <div class="absolute right-0 top-full mt-2 w-72 bg-white rounded-lg shadow-xl hidden z-50 overflow-hidden border border-gray-200" id="mobile-menu">
+                <div class="py-1 mobile-nav-container divide-y divide-gray-100">
+                    {% for item_html in nav_array %}
+                    <div class="mobile-nav-item">
+                        {{ item_html }}
+                    </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
 
-        {% assign base_classes = "text-gray-800 transition duration-300 relative py-1 px-2" %}
-        {% assign active_classes = "font-bold text-blue-600" %}
-        {% assign hover_classes = "hover:text-blue-600" %}
-
-        <nav class="hidden md:flex space-x-8 py-4 font-medium">
-            {% for item in site.navigation %}
-            {% assign item_url = item.url | remove: ".html" %}
-            {% assign page_url = page.url | remove: ".html" | remove: site.baseurl %}
-            <a href="{{ item.url | relative_url }}"
-               class="{{ base_classes }} {{ hover_classes }} {% if page_url == item_url %}{{ active_classes }}{% endif %}"
-            >
-                {{ item.text }}
-            </a>
+        <nav class="hidden md:flex space-x-6 py-2 font-medium desktop-nav">
+            {% for item_html in nav_array %}
+            {{ item_html }}
             {% endfor %}
         </nav>
-
-<!--        <div class="relative inline-block text-left" id="language-dropdown">-->
-<!--            <button type="button" id="language-menu-button" class="inline-flex justify-between items-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false" aria-haspopup="true">-->
-<!--                <span id="current-language">EN</span>-->
-<!--                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">-->
-<!--                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />-->
-<!--                </svg>-->
-<!--            </button>-->
-
-<!--            <div id="language-options" class="hidden origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="language-menu-button" tabindex="-1">-->
-<!--                <div class="py-1" role="none">-->
-<!--                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" tabindex="-1" data-lang="en">English</a>-->
-<!--                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" tabindex="-1" data-lang="kh">Khmer</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
 </header>
