@@ -14,7 +14,7 @@
       active: true
   thumbnail: "https://rachana.gov.kh/assets/uncompressed_images/rachana.svg"
 
-- title: "Rachana Wordpress"
+- title: "Rachana WordPress"
   description: "Same purpose as Rachana but is based on WordPress."
   tech:
     - WordPress
