@@ -18,7 +18,7 @@ navigation:
   - text: "Papers"
     url: "/papers"
     primary: false
-  - text: "Others"
+  - text: "Archive"
     url: "/misc"
     primary: false
 
