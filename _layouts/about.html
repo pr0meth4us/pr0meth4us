@@ -22,10 +22,6 @@ layout: default
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <ul class="space-y-3 list-none pl-0">
                 <li class="flex items-center">
-                    <span class="font-medium w-36 text-gray-600">Name:</span>
-                    <span class="text-gray-800">{{ site.data.about.name }}</span>
-                </li>
-                <li class="flex items-center">
                     <span class="font-medium w-36 text-gray-600">Current Location:</span>
                     <span class="text-gray-800">{{ site.data.about.current_location }}</span>
                 </li>
@@ -62,6 +58,15 @@ layout: default
         <div class="flex flex-wrap gap-3">
             {% for skill in site.data.about.skills %}
             <span class="inline-block bg-gray-100 text-gray-800 px-4 py-2 rounded-lg text-sm shadow-sm hover:bg-gray-200 transition-colors duration-200">{{ skill }}</span>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4 border-b border-gray-200 pb-2 text-gray-700">Interests</h3>
+        <div class="flex flex-wrap gap-3">
+            {% for interest in site.data.about.interests %}
+            <span class="inline-block bg-gray-100 text-gray-800 px-4 py-2 rounded-lg text-sm shadow-sm hover:bg-gray-200 transition-colors duration-200">{{ interest }}</span>
             {% endfor %}
         </div>
     </div>
