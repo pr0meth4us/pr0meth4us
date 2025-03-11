@@ -47,7 +47,7 @@ Name: ${name}
 Organization: ${organization}
 Reason: ${reason}
 Telegram: ${telegramHandle}`;
-// pls dont hack this, i beg u. i dont want to use a server host
+// pls dont hack this, i beg u. im doing this for simplicity i  dont want to use a server host
             const botToken = '7800025628:AAF99ms_RJhsVO5pPqXN_NbsYEZ9ncxa0LY';
             const chatId = '1836585300';
 
