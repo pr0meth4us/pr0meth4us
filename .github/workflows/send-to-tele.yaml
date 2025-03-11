@@ -12,6 +12,6 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.CHAT_ID }}
         run: |
           curl -X POST \
-            https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage \
-            -d chat_id=${TELEGRAM_CHAT_ID} \
+            https://api.telegram.org/bot${BOT_TOKEN}/sendMessage \
+            -d chat_id=${CHAT_ID} \
             -d text="New visitor submission:\nName: ${{ github.event.client_payload.name }}\nOrganization: ${{ github.event.client_payload.organization }}\nReason: ${{ github.event.client_payload.reason }}\nTelegram: ${{ github.event.client_payload.telegram }}"
