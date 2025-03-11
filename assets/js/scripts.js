@@ -37,37 +37,27 @@ document.addEventListener('DOMContentLoaded', function() {
             const organization = document.getElementById('visitor-organization').value;
             const telegramHandle = document.getElementById('telegram-handle').value;
             const reasonElement = document.querySelector('input[name="reason"]:checked');
-            const reason = reasonElement.value;
+            const reason = reasonElement ? reasonElement.value : 'Not provided';
 
             localStorage.setItem('modalShown', 'true');
             localStorage.setItem('visitorName', name);
 
-            const message = `New visitor submission:
-Name: ${name}
-Organization: ${organization}
-Reason: ${reason}
-Telegram: ${telegramHandle}`;
-// pls dont hack this, i beg u. im doing this for simplicity i  dont want to use a server host
-            const botToken = '7800025628:AAF99ms_RJhsVO5pPqXN_NbsYEZ9ncxa0LY';
-            const chatId = '1836585300';
+            const formData = new FormData();
+            formData.append('entry.279597109', name);
+            formData.append('entry.1168413239', organization);
+            formData.append('entry.1473708403', reason);
+            formData.append('entry.901917649', telegramHandle);
 
-            if (botToken && chatId) {
-                console.log("Sending message to Telegram...");
-                fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        chat_id: chatId,
-                        text: message
-                    })
+            fetch('https://docs.google.com/forms/d/e/1FAIpQLScfYiEtg7dI3LSCzUPOFG4ilC1R7iBvMflsEynYwoUksrKuBQ/formResponse', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+                .then(() => {
+                    console.log("Form submitted to Google Forms");
+                    welcomeModal.classList.add('hidden');
                 })
-                    .then(response => response.json())
-
-            }
-
-            welcomeModal.classList.add('hidden');
+                .catch(error => console.error("Error:", error));
         });
     }
 
