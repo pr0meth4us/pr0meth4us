@@ -1,40 +1,37 @@
-name: Deploy to GitHub Pages
+name: Deploy to Main Branch
 
 on:
   push:
-    branches:
-      - i-dont-need-a-job
+    branches: [ i-dont-need-a-job ]
 
-permissions:
-  contents: write
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout source branch
         uses: actions/checkout@v3
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
-          bundler-cache: true
+          ref: i-dont-need-a-job
 
-      - name: Install dependencies
+      - name: Set up Git
         run: |
-          gem install bundler
-          bundle install
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
 
-      - name: Build Jekyll site
-        run: bundle exec jekyll build --config _config.yml
-        env:
-          JEKYLL_ENV: production
+      - name: Fetch main branch
+        run: |
+          git fetch origin main:main || git branch main
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          publish_branch: main
-        continue-on-error: true
+      - name: Prepare main branch
+        run: |
+          git checkout main
+          git rm -rf . || true
+          git checkout i-dont-need-a-job -- index.html
+          git add index.html
+
+      - name: Commit and push to main
+        run: |
+          git commit -m "Deploy: update from i-dont-need-a-job branch" || echo "No changes to commit"
+          git push origin main
