@@ -80,13 +80,13 @@ title: Archive
         {% endif %}
       </div>
 
-      <p class="text-gray-700 mb-4 flex-grow text-justify leading-relaxed">
+      <div class="text-gray-700 mb-4 flex-grow text-justify leading-relaxed">
         {% if item.abstract %}
         {{ item.abstract }}
         {% else %}
         {{ item.description }}
         {% endif %}
-      </p>
+      </div>
 
       {% if item.tags %}
       <div class="flex flex-wrap mb-4 gap-2">

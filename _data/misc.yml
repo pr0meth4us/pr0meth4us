@@ -9,6 +9,12 @@
     text: "Learn more about DGF"
     link: "https://kiripost.com/stories/cambodia-pushes-ahead-on-digital-journey"
 
+- title: "University Tutor"
+  description: "Provided personalized one-on-one tutoring in History and Political Science courses to help students improve their academic performance. Led orientation workshops for first-year students to help them navigate university life and develop essential college success skills."
+  images:
+    - "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741747827/photo_2025-03-12_09-52-14_lz2tsc.jpg"
+  tags: ["tutoring", "mentoring", "academic support", "student orientation"]
+
 - title: "Digital Literacy Trainer"
   description: "As a Digital Literacy Trainer with the Ministry of Education, Youth, and Sports, I specialized in teaching digital skills to high school students with limited technological access. I successfully trained 320 high school students in a remote province, equipping them with essential digital competencies despite resource constraints."
   images:
@@ -31,8 +37,7 @@
     link: "https://aiesec.org/"
 
 - title: "Pre-University Achievement"
-  description: "Completed Senior High School Diploma in the Bilingual Program at Paragon International School. Awarded fully funded scholarship and obtained grade A in the National Examination."
+  description: "<ul class='list-disc pl-5 space-y-1 text-gray-700 text-justify leading-relaxed'><li>Earned Senior High School Diploma (Bilingual Program) at Paragon International School with full boarding scholarship.</li><li>Achieved Grade A in National Examination.</li><li>Currently at AUPP with full scholarship and monthly stipend.</li></ul>"
   images:
     - "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741724129/IMG_7428_mftayi.jpg"
-  tags: [ "high school", "bilingual education", "academic excellence", "scholarship" ]
-
+  tags: ["high school", "bilingual education", "academic excellence", "scholarship"]
