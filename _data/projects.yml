@@ -9,7 +9,7 @@
     - name: GitHub
       url: "https://github.com/DGTDept/Rachana"
       active: true
-    - name: Demo (incomplete)
+    - name: Demo
       url: https://rachana.gov.kh/
       active: true
   thumbnail: "https://rachana.gov.kh/assets/uncompressed_images/rachana.svg"
@@ -24,7 +24,7 @@
     - name: GitHub
       url: "https://github.com/MPTCDITR/rachana-demo"
       active: true
-    - name: Demo
+    - name: Demo (incomplete)
       url: "https://wordpress.rachana.gov.kh/"
       active: true
   thumbnail: "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741625241/Untitled_design_1_zgzqng.jpg"
