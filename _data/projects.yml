@@ -55,20 +55,22 @@
       active: true
   thumbnail: "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741625241/Untitled_design_1_zgzqng.jpg"
 
-
 - title: "AUPP eCampus"
-  description: "My final project. An eLearning portal designed to be cost efficient by utilizing the 'free trail' provisions from various providers."
+  description: "My final project. An eLearning portal designed to be cost efficient by utilizing the 'free trial' provisions from various providers."
   tech:
     - React
     - Databases (Mongo, AWS, Cloudinary, Redis, Supabase)
     - Flask
     - PayPal API
   links:
-    - name: GitHub
-      url: "https://ecampusauppedu.vercel.app/"
+    - name: Frontend
+      url: "https://auppecampus.vercel.app/"
       active: true
-    - name: Website
-      url: "https://ecampusauppedu.vercel.app/"
+    - name: Backend
+      url: "https://irrelevant-bonnibelle-aupp-6d0e6d6c.koyeb.app/"
+      active: true
+    - name: GitHub
+      url: "https://github.com/pr0meth4us/AUPP-eCampus"
       active: true
   thumbnail: "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741504449/3431C832-28C4-4E67-9E7B-95840E208C69_1_201_a_xbmgef.jpg"
 
