@@ -22,10 +22,10 @@
     - "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741721429/DSC07547_ou3krd.jpg"
 #  tags: ["digital literacy", "education", "rural education", "technology access"]
 
-#- title: "Alumni Representative"
-#  description: "As the designated Alumni Representative for my high school graduating class, I foster engagement and communication among alumni and between alumni and our alma mater."
-#  images:
-#    - "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741719905/IMG_9094_2_fwqtuu.jpg"
+- title: "Alumni Representative"
+  description: "As the designated Alumni Representative for my high school graduating class, I foster engagement and communication among alumni and between alumni and our alma mater."
+  images:
+    - "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741719905/IMG_9094_2_fwqtuu.jpg"
 #  tags: ["alumni", "communication", "community"]
 
 - title: "Team Leader"
