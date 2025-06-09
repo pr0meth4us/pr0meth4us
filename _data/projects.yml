@@ -18,7 +18,7 @@
       active: true
     - name: Demo
       url: "https://camlpr.vercel.app/"
-      active: false
+      active: true
     - name: Model Training
       url: "https://colab.research.google.com/drive/1Kihpf1Ze3Pq14FhVz0pr0iPukIo0pQM_?usp=sharing"
       active: true
