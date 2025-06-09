@@ -7,65 +7,56 @@
             </a>
         </div>
 
+        {% assign navigation_items = "" %}
         {% for item in site.navigation %}
-        {% assign item_url = item.url | remove: ".html" %}
-        {% assign page_url = page.url | remove: ".html" | remove: site.baseurl %}
+            {% assign item_url = item.url | relative_url %}
+            {% assign page_url = page.url | relative_url %}
 
-        {% comment %} Extract just the first section of the page URL {% endcomment %}
-        {% assign url_parts = page_url | split: "/" %}
-        {% assign first_section = "" %}
-        {% if url_parts.size > 1 and url_parts[1] != "" %}
-        {% assign first_section = "/" | append: url_parts[1] | append: "/" %}
-        {% else %}
-        {% assign first_section = "/" %}
-        {% endif %}
-
-        {% comment %} Extract just the first section of the item URL {% endcomment %}
-        {% assign item_url_parts = item_url | split: "/" %}
-        {% assign item_first_section = "" %}
-        {% if item_url_parts.size > 1 and item_url_parts[1] != "" %}
-        {% assign item_first_section = "/" | append: item_url_parts[1] | append: "/" %}
-        {% else %}
-        {% assign item_first_section = "/" %}
-        {% endif %}
-
-        {% assign is_active = false %}
-        {% if first_section == item_first_section and item_first_section != "/" %}
-        {% assign is_active = true %}
-        {% elsif item_url == "/" and page_url == "/" %}
-        {% assign is_active = true %}
-        {% endif %}
-
-        {% capture nav_item %}
-        <div class="{% if item.submenu %}dropdown-container{% endif %} nav-item">
-            <a href="{{ item.url | relative_url }}"
-               class="{% if is_active %}text-blue-600 active-nav{% else %}text-gray-800 hover:text-blue-600{% endif %} transition nav-link"
-            >
-                {{ item.text }}
-                {% if item.submenu %}
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1 transform transition-transform duration-200 dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-                {% endif %}
-            </a>
-
-            {% if item.submenu %}
-            <div class="dropdown-content">
+            {% assign is_active = false %}
+            {% if item_url == page_url %}
+                {% assign is_active = true %}
+            {% elsif item.submenu %}
                 {% for subitem in item.submenu %}
-                {% assign subitem_url = subitem.url | remove: ".html" %}
-                {% assign subitem_is_active = page_url == subitem_url %}
-                <a href="{{ subitem.url | relative_url }}"
-                   class="dropdown-item {% if subitem_is_active %}text-blue-600{% else %}text-gray-700 hover:text-blue-600{% endif %} transition"
-                >
-                    {{ subitem.text }}
-                </a>
+                    {% if subitem.url | relative_url == page_url %}
+                        {% assign is_active = true %}
+                    {% endif %}
                 {% endfor %}
-            </div>
             {% endif %}
-        </div>
-        {% endcapture %}
 
-        {% assign navigation_items = navigation_items | default: "" | append: nav_item | append: "||SPLIT||" %}
+            {% capture nav_item %}
+            <div class="{% if item.submenu %}dropdown-container{% endif %} nav-item">
+                <a href="{{ item.url | relative_url }}"
+                   class="{% if is_active %}text-blue-600 active-nav{% else %}text-gray-800 hover:text-blue-600{% endif %} transition nav-link">
+                    {{ item.text }}
+                    {% if item.submenu %}
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1 transform transition-transform duration-200 dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    {% endif %}
+                </a>
+
+                {% if item.submenu %}
+                <div class="dropdown-content">
+                    {% for subitem in item.submenu %}
+                        {% assign subitem_url = subitem.url | relative_url %}
+                        {% assign page_url_no_html = page.url | remove: ".html" %}
+                        {% assign subitem_url_no_html = subitem.url | remove: ".html" %}
+
+                        {% assign subitem_is_active = false %}
+                        {% if page_url_no_html == subitem_url_no_html %}
+                            {% assign subitem_is_active = true %}
+                        {% endif %}
+
+                        <a href="{{ subitem.url | relative_url }}"
+                           class="dropdown-item {% if subitem_is_active %}text-blue-600{% else %}text-gray-700 hover:text-blue-600{% endif %} transition">
+                           {{ subitem.text }}
+                        </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endcapture %}
+            {% assign navigation_items = navigation_items | append: nav_item | append: "||SPLIT||" %}
         {% endfor %}
 
         {% assign nav_array = navigation_items | split: "||SPLIT||" %}
@@ -77,7 +68,6 @@
                 </svg>
             </button>
 
-            <!-- Mobile Menu -->
             <div class="absolute right-0 top-full mt-2 w-72 bg-white rounded-lg shadow-xl hidden z-50 overflow-hidden border border-gray-200" id="mobile-menu">
                 <div class="py-1 mobile-nav-container divide-y divide-gray-100">
                     {% for item_html in nav_array %}
