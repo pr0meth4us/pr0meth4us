@@ -1,7 +1,7 @@
 ---
 layout: about
 title: About Me
-profile_image: https://res.cloudinary.com/dktzt7yn1/image/upload/v1741625847/IMG_9124__1_-removebg-preview_pihcgg.png
+profile_image: https://raw.githubusercontent.com/pr0meth4us/pr0meth4us/source/assets/DSCF2061.jpg
 ---
 
 **Neron**
