@@ -1,3 +1,29 @@
+- title: "Cambodia License Plate Recognition System"
+  description: |
+    Developed a specialized license plate recognition system for Cambodian vehicles.  
+    Fine-tuned a YOLO-based segmentation and detection model to accurately locate license plates then segment the number and province regions.  
+    Integrated with OCR (PARSeq) for text recognition.  
+    Backend built with Flask, frontend with Next.js, deployed using Docker.  
+    Focused on optimizing detection precision and inference speed for real-time usage.
+  tech:
+    - Python
+    - Flask
+    - YOLO
+    - PARSeq OCR
+    - Next.js
+    - Docker
+  links:
+    - name: GitHub
+      url: "https://github.com/pr0meth4us/camlpr"
+      active: true
+    - name: Demo
+      url: "https://camlpr.vercel.app/"
+      active: false
+    - name: Model Training
+      url: "https://colab.research.google.com/drive/1Kihpf1Ze3Pq14FhVz0pr0iPukIo0pQM_?usp=sharing"
+      active: true
+  thumbnail: "https://res.cloudinary.com/dktzt7yn1/image/upload/v1747767907/Screenshot_2025-05-21_at_2.03.49_in_the_morning_qlq6s2.png"
+
 - title: "Rachana.gov.kh"
   description: "Government design system to universalize the interface of digital public services."
   tech:
