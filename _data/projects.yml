@@ -122,7 +122,7 @@
     Supports Telegram, Facebook, Instagram, iMessage, Discord, and TikTok exports in HTML/JSON formats.  
     Features detailed parsing of message structure, Khmer date support, and analysis of response patterns, ghost periods, language usage, and relationship balance.  
     Backend is built with Flask, supports CORS and file uploads, and serves a web API.  
-    Includes Dockerfile and Docker Compose setup for easy deployment.
+    (The server is not properly working yet, it's being troubleshot. Local works just fine.)
   tech:
     - Python
     - Flask
