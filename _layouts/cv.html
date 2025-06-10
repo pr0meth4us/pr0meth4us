@@ -4,6 +4,8 @@ title: Curriculum Vitae
 permalink: /about/cv/
 ---
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <div class="space-y-10" id="cv-content">
     <div class="text-center">
         <h1 class="text-4xl font-bold mb-2">{{ site.title }}</h1>
@@ -78,21 +80,29 @@ permalink: /about/cv/
         </div>
     </section>
 
-    <button
-      id="download-pdf"
-      class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
-    >
-      Download as PDF
-    </button>
-
-
+    <!-- PDF Download Button -->
     <div class="text-center mt-8">
-        <h3 class="text-lg font-semibold mb-3 px-4 py-2 bg-gray-100 rounded-lg  shadow-sm">Download CV as PDF</h3>
-        <a href="{{ site.data.cv.ir_pdf_url }}" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md inline-block transition duration-300 mr-4">
-            IR CV
-        </a>
-        <a href="{{ site.data.cv.it_pdf_url }}" class="bg-blue-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-md inline-block transition duration-300">
-            IT CV
-        </a>
+        <button
+            id="download-pdf"
+            class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300 font-medium inline-flex items-center"
+        >
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Download as PDF
+        </button>
+    </div>
+
+    <!-- Alternative PDF Downloads -->
+    <div class="text-center mt-6 pt-6 border-t border-gray-200">
+        <h3 class="text-lg font-semibold mb-3 px-4 py-2 bg-gray-100 rounded-lg shadow-sm">Pre-made CV Downloads</h3>
+        <div class="space-x-4">
+            <a href="{{ site.data.cv.ir_pdf_url }}" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md inline-block transition duration-300">
+                IR CV
+            </a>
+            <a href="{{ site.data.cv.it_pdf_url }}" class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-md inline-block transition duration-300">
+                IT CV
+            </a>
+        </div>
     </div>
 </div>
