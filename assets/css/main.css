@@ -229,5 +229,34 @@ a.bg-gray-800:hover {
     max-height: 500px;
   }
 }
+@media print {
+  #download-pdf,
+  .text-center:last-child {
+    display: none !important;
+  }
+  body {
+    font-size: 12px;
+  }
+  section {
+    page-break-inside: avoid;
+    margin-bottom: 15px;
+  }
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+}
+/* Loading animation */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
