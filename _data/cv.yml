@@ -48,12 +48,13 @@ skills:
     items:
       - "<span class=\"font-medium\">Frontend Development:</span> React, Bootstrap, Tailwind, Next.js, WordPress Theme Development"
       - "<span class=\"font-medium\">Backend Development:</span> Spring Boot, Node.js, Flask, MongoDB"
-      - "<span class=\"font-medium\">Data Science & Analytics:</span> Data Analysis, Visualization (Power BI, Matplotlib, Seaborn)"
+      - "<span class=\"font-medium\">Data Analysis & Visualization:</span> Power BI, Matplotlib, Seaborn"
 
   - category: "Other Skills & Certifications"
     items:
       - "Research & Policy Development"
-      - "<span class=\"font-medium\">Certifications:</span> AWS Cloud Data Pipeline Builder, AWS Cloud Architecting, Cisco Networking Essentials"
+      - "<span class=\"font-medium\">Certifications:</span> AWS Cloud Data Pipeline Builder, AWS Cloud Architecting, Cisco Networking Essentials, IBM
+                           - Data Analysis with Python"
 
 ir_pdf_url: "https://docs.google.com/presentation/d/1NRitWO8yetD6M1swKvSy2vQ-Z0PiS5AVrqFESCYNUTA/export/pdf"
 it_pdf_url: "https://docs.google.com/presentation/d/15KupKWc1YWgsSGbBFT2i07VsnUeUYW5NEeOx1UAReKg/export/pdf"
