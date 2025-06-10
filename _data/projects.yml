@@ -115,3 +115,28 @@
       url: "https://content-design-research-spn.vercel.app/"
       active: false
   thumbnail: "https://res.cloudinary.com/dktzt7yn1/image/upload/v1741625575/DALL_E_2024-10-27_00.51.40_-_A_modern_black_and_white_logo_design_for_the_brand__Hestia___inspired_by_the_Greek_goddess_of_hearth_and_home._The_logo_features_a_minimalist__stylize_1-removebg-preview_h39xa4.png"
+
+- title: "Chat Message Analyzer"
+  description: |
+    A chat analysis tool that transforms exported chat logs into insights about communication patterns and relationship dynamics.  
+    Supports Telegram, Facebook, Instagram, iMessage, Discord, and TikTok exports in HTML/JSON formats.  
+    Features detailed parsing of message structure, Khmer date support, and analysis of response patterns, ghost periods, language usage, and relationship balance.  
+    Backend is built with Flask, supports CORS and file uploads, and serves a web API.  
+    Includes Dockerfile and Docker Compose setup for easy deployment.
+  tech:
+    - Python
+    - Flask
+    - HTML/JSON Parsing
+    - Natural Language Analysis
+    - Docker
+  links:
+    - name: GitHub
+      url: "https://github.com/pr0meth4us/chat-analysis"
+      active: true
+    - name: Demo
+      url: "https://chat-analysis-gold.vercel.app/"
+      active: true
+    - name: Backend
+      url: "worrying-iolande-aupp-5e910212.koyeb.app/"
+      active: true
+  thumbnail: "https://res.cloudinary.com/dktzt7yn1/image/upload/v1749548452/ChatGPT_Image_Jun_10_2025_04_40_38_PM_oj20ug.png"
